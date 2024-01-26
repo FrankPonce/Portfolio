@@ -364,6 +364,7 @@ section{
     flex-direction: column;
 }
 
+
 .article-container{
    
     display: flex;
@@ -378,7 +379,7 @@ section{
 
 article{
     display: flex;
-    width: 10rem;
+    width: 12rem;
     justify-content: space-around;
     gap: 0.5rem;
 }
@@ -399,7 +400,7 @@ article .icon{
 .article-container-1{
     display: flex;
     text-align: initial;
-    text-wrap: wrap;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 2.5rem;
     justify-content: space-around;
@@ -416,3 +417,48 @@ article .icon{
     margin: 1rem;
 }
 
+
+/*CONTACT*/
+#contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+
+}
+
+.contact-info-upper-container{
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(251, 246, 240) 0.1rem solid;
+    margin:2rem auto;
+    padding: 0.5rem;
+}
+
+.contact-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin:1rem;
+}
+
+.contact-info-container p{
+    font-size: larger;
+}
+
+.contact-icon{
+    cursor: default;
+    height: 2rem;
+}
+
+/*FOOTER*/
+footer{
+    height: 26vh;
+    margin: 0 1rem;
+}
+
+footer p{
+    text-align: center;
+}
