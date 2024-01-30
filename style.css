@@ -200,11 +200,19 @@ section{
 
 .section__text__p1{
     text-align: center;
+    
 }
 
 .section__text__p2{
     font-size: 1.75rem;
     margin-bottom: 1rem;
+}
+
+.section__text__p3{
+    text-align: justify;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    
 }
 
 .title{
@@ -232,6 +240,7 @@ section{
     display: flex;
     justify-content: center;
     gap: 1rem;
+    padding: 1rem;
 }
 
 .btn{
