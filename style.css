@@ -386,6 +386,18 @@ section{
 
 }
 
+.article-container-2{
+   
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: space-around;
+    
+
+}
+
 article{
     display: flex;
     width: 10rem;
