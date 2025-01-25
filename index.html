@@ -1,410 +1,323 @@
 <!DOCTYPE html>
-<!--If you're reading this, Brazil, just wanted to let you know that Franky <3 u wuwu-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+    <title>Frank Mediavilla - Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Frank Mediavilla</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <div class="geometric-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="animated-background"></div>
+    
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#experience">Experience</a></li>
+            <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Frank Mediavilla</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile-pic.png" alt="Frank Mediavilla Profile Picture"/>
-            
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I am</p>
-            <h1 class="title">Frank Mediavilla</h1> 
-            <p class="section__text__p2">Computer Science Student</p>
-            <div class="btn-container">
-                <button class="btn btn-color-1" onclick="window.open('./assets/FMResume.pdf')">
-                    Download CV
-                </button>
-                <button class="btn btn-color-2" onclick="location.href='./#contact'">
-                    Contact Info
-                </button>
-            </div>
-            <div id="socials-container">
-                <img 
-                src="./assets/linkedin.png" 
-                alt="LinkedIn" 
-                class="icon" 
-                onclick="location.href='https://www.linkedin.com/in/frank-mediavilla-65666b1bb/'">
-                <img 
-                src="./assets/github.png" 
-                alt="Github" 
-                class="icon" 
-                onclick="location.href='https://github.com/FrankPonce'">
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <p class="section__text__p1">
-            Get To Know More
-        </p>
-        <h1 class="title">
-            About Me
-        </h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img 
-                src="./assets/about-pic.png" 
-                alt="Profile Picture"
-                class="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img 
-                        src="./assets/experience.png" 
-                        alt="Experience Icon" 
-                        class="icon"
-                        />
-                        <h3>Experience</h3>
-                        <p>Senior Standing <br /> Student</p>
-                    </div>
-                    <div class="details-container">
-                        <img 
-                        src="./assets/education.png" 
-                        alt="Experience Icon" 
-                        class="icon"
-                        />
-                        <h3>Education</h3>
-                        <p>B.Sc.  <br /> Computer Science</p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>As a senior student at Florida International University, I have taken several courses focusing on AI, Data Structures, and Data Science. Last year, I interned at a major emergency response company in South Florida, CDR Companies, where I put my problem-solving skills to the test, while acquiring extensive knowledge of Salesforce and Tableu for data management and visualization. And this summer, I participated in BreakThroughTech Miami's Sprinternship program, where I further worked with collecting, cleaning, analyzing and making sense of data with the help of ML. Needless too say, I have a passion for data analysis and intend to further my knowledge and skills in the field with another internship. </p>
-                </div>
-            </div>
-        </div>
-        <img 
-        src="./assets/arrow.png" 
-        alt="Next" 
-        class="icon arrow"
-        onclick="location.href='./#experience'"/>
-    </section>
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Languages</h2>
-                    <div class="article-container">
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Java</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Python</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>MySQL</h3>
-                                <p>Beginner</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Apex</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Html</h3>
-                                <p>Beginner</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>CSS</h3>
-                                <p>Beginner</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>JavaScript</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Software</h2>
-                    <div class="article-container">
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Salesforce</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Tableau</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>Unity</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>MySQL Workbench</h3>
-                                <p>Beginner</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>IntelliJ</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img 
-                            src="./assets/checkmark.png" 
-                            alt="Icon"
-                            class="icon"/>
-                            <div >
-                                <h3>React Native</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img 
-        src="./assets/arrow.png" 
-        alt="Next" 
-        class="icon arrow"
-        onclick="location.href='./#projects'"/>
-    </section>
-    <section id="projects">
-        <p class="section__text__p1">
-            Browse My Recent
-        </p>
-        <h1 class="title">Projects</h1>
-        <div class="experience_details_container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container-2">
-                        <img 
-                        src="./assets/project-4.png" 
-                        alt="Project 4"
-                        class="project-img"
-                        />
-                       
-                    </div>
-                    <h2 class="experience-sub-title project-title">Chordify.ai</h2>
-                    <p class="section__text__p3">
-                         React app that uses neural networks to identify the chords in a song
-                    </p>
-                    <div class="btn-container-1">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/FrankPonce/Chordify'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://chordify-xu4e.onrender.com'">
-                            Website
-                        </button>
-                        
-                        
-                    </div>
-                    </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img 
-                        src="./assets/project-1.png" 
-                        alt="Project 1"
-                        class="project-img"
-                        />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Campus Parking AI Model</h2>
-                    <p class="section__text__p3">
-                        A ML algorithm that calculates a desirability score for each FIU parking garage.
-                    
-                    </p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/FrankPonce/DiscoverAI'">
-                            Github
-                        </button>
-                    
-                </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img 
-                        src="./assets/project-2.png" 
-                        alt="Project 2"
-                        class="project-img"
-                        />
-                        
-                    </div>
-                    <h2 class="experience-sub-title project-title">Tableu Portfolio</h2>
-                    <p class="section__text__p3">
-                        Tableu Public profile showcasing my different interactive vizzes
-                        
-                    </p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://public.tableau.com/app/profile/frank.mediavilla/vizzes'">
-                            Tableu Public
-                        </button>
-                        
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                <div class="article-container">
-                    <img 
-                    src="./assets/project-3.png" 
-                    alt="Project 3"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Live Metrics Dashboards</h2>
-                <p class="section__text__p3">
-                    Python powered website showcasing visualization of live metrics data
-                </p>
-                <div class="btn-container-1">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/FrankPonce/Data-Insight-Dashboards'">
-                        Github
-                    </button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://flask-backend-bap5.onrender.com/'">
-                        Website
-                    </button>
-                    
-                </div>
-                </div>
-                
-                    
-                    
-            </div>
-        </div>
-        <img 
-        src="./assets/arrow.png" 
-        alt="Next" 
-        class="icon arrow"
-        onclick="location.href='./#contact'"/>
-    </section>
-    <section id="contact">
-        <p class="section__text__p1">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img 
-                src="./assets/email.png"
-                alt="Email"
-                class="icon contact-icon"
-                />
-                <p><a href="mailto:fmedi027@fiu.edu">fmedi027@fiu.edu</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img 
-                src="./assets/linkedin.png"
-                alt="LinkedIn"
-                class="icon contact-icon"
-                />
-                <p><a href="https://www.linkedin.com/in/frank-mediavilla-65666b1bb/">LinkedIn</a></p>
-            </div>
 
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <h1>Frank Mediavilla</h1>
+                    <p class="title">Data Analyst & Computer Science Student</p>
+                    <p class="description">Passionate about transforming complex data into actionable insights. Experienced with Tableau, SQL, and Python for data analysis and visualization.</p>
+                    <div class="button-container">
+                        <a href="#contact" class="resume-button" >
+                            Get In Touch
+                        </a>
+                        <div class="resume-container">
+                            <a href="assets/Frank Mediavilla 25.pdf" class="resume-button" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                Download Resume
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="profile-image">
+                    <img src="assets/profile-pic.png" alt="Frank Mediavilla">
+                </div>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon">
+                    <p class="tech-name">Python</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="tech-icon">
+                    <p class="tech-name">SQL</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-icon">
+                    <p class="tech-name">Java</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon">
+                    <p class="tech-name">JavaScript</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon">
+                    <p class="tech-name">React</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://www.svgrepo.com/show/354428/tableau-icon.svg" alt="Tableau" class="tech-icon white-icon">
+                    <p class="tech-name">Tableau</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg" alt="Salesforce" class="tech-icon">
+                    <p class="tech-name">Salesforce</p>
+                </div>
+                <div class="tech-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-icon">
+                    <p class="tech-name">Node.js</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="experience" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <p>My professional journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="timeline-content">
+                                <img src="assets/startupfiu.png" alt="StartupFIU" class="timeline-logo">
+                                <div class="timeline-info">
+                                    <div class="timeline-date accent-text">Jan 2024 - May 2024</div>
+                                    <h3 class="timeline-title">StartupFIU</h3>
+                                    <p class="timeline-subtitle">Data Analyst Sprintern</p>
+                                    <p class="timeline-description">Analyzed and feature engineered demographics and event attendance data using Pandas and Excel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="timeline-content">
+                                <img src="assets/startupfiu.png" alt="StartupFIU" class="timeline-logo">
+                                <div class="timeline-info">
+                                    <div class="timeline-date accent-text">Jan 2024 - May 2024</div>
+                                    <h3 class="timeline-title">StartupFIU</h3>
+                                    <p class="timeline-subtitle">Data Analyst Sprintern</p>
+                                    <p class="timeline-description">Analyzed and feature engineered demographics and event attendance data using Pandas and Excel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="timeline-content">
+                                <img src="assets/blackstone.png" alt="Blackstone" class="timeline-logo">
+                                <div class="timeline-info">
+                                    <div class="timeline-date accent-text">April 2024</div>
+                                    <h3 class="timeline-title">Blackstone</h3>
+                                    <p class="timeline-subtitle">Diverse Innovators Program</p>
+                                    <p class="timeline-description">Was selected for Blackstone's program, focused on networking with leaders in financial technology, career development, and innovation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="timeline-content">
+                                <img src="assets/cdr.png" alt="CDR Companies" class="timeline-logo">
+                                <div class="timeline-info">
+                                    <div class="timeline-date accent-text">Aug 2023 - Dec 2023</div>
+                                    <h3 class="timeline-title">CDR Companies</h3>
+                                    <p class="timeline-subtitle">Business Intelligence Intern</p>
+                                    <p class="timeline-description">Developed features on CDR Health Salesforce platform and created data visualization dashboards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+
+    <section id="portfolio" class="tableau-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Data Visualization Portfolio</h2>
+                <p>Interactive Tableau dashboards showcasing analytical capabilities</p>
             </div>
-        </nav>
-        <p>Copyright &#169; 2024 Frank Mediavilla. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+            <div class="tableau-container">
+                <iframe
+                    class="tableau-viz"
+                    src="https://public.tableau.com/views/Project1_17261701024660/Dashboard1?:showVizHome=no&:embed=true"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Highlighting key data analysis and visualization projects</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-card card">
+                    <div class="card-inner">
+                        <img src="assets/vistatrade.png" alt="CDR Companies Dashboard" class="project-image">
+                        <div class="project-info">
+                            <h3>Vista Trade</h3>
+                            <p>A stock trading simulation web app developed with React, with the ability to get real-time stock prices</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">Salesforce</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                            
+                            <div class="button-container">
+                                <a href="https://vistatrade.onrender.com/" target="_blank" class="link-button" >
+                                    Try It Out
+                                </a>
+                                <a href="https://vistatrade.onrender.com/" target="_blank" class="link-button" >
+                                    Github
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card card">
+                    <div class="card-inner">
+                        <img src="https://placehold.co/600x400" alt="Parking AI Model" class="project-image">
+                        <div class="project-info">
+                            <h3>Campus Parking AI Model</h3>
+                            <p>Created ML algorithm to calculate desirability scores for FIU parking garages using historical data.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">ML</span>
+                                <span class="tech-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card card">
+                    <div class="card-inner">
+                        <img src="https://placehold.co/600x400" alt="Live Metrics Dashboard" class="project-image">
+                        <div class="project-info">
+                            <h3>Live Metrics Dashboard</h3>
+                            <p>Built real-time visualization platform for monitoring key performance metrics.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Real-time Data</span>
+                                <span class="tech-tag">Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's connect and discuss opportunities</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item card">
+                    <div class="card-inner1">
+                        <i class="contact-icon fas fa-phone"></i>
+                        <div class="contact-info">
+                            <p>Phone</p>
+                            <a href="tel:3053038602">(305) 303-8602</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item card">
+                    <div class="card-inner1">
+                        <i class="contact-icon fas fa-envelope"></i>
+                        <div class="contact-info">
+                            <p>Email</p>
+                            <a href="mailto:fmedi027@fiu.edu">fmedi027@fiu.edu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item card">
+                    <div class="card-inner1">
+                        <i class="contact-icon fas fa-map-marker-alt"></i>
+                        <div class="contact-info">
+                            <p>Location</p>
+                            <span>Miami, FL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item card">
+                    <div class="card-inner1">
+                        <i class="contact-icon fab fa-linkedin"></i>
+                        <div class="contact-info">
+                            <p>LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/frank-mediavilla/" target="_blank">frank-mediavilla</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-container">
+                <a href="assets/Frank Mediavilla 25.pdf" class="resume-button" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.timeline-item, .card').forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
