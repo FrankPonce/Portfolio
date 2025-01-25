@@ -30,6 +30,13 @@ body {
 .section-header{
     padding-bottom: 2rem;
 }
+
+h2{
+    font-size: 2.5rem;
+    
+    
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -238,9 +245,9 @@ header {
 /* Tech Stack Grid */
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
 }
 
 .tech-item {
@@ -253,11 +260,11 @@ header {
 }
 
 .tech-icon {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 0.5rem;
     filter: grayscale(100%) brightness(200%);
-    transition: filter 0.3s ease;
+    transition: filter 0.2s ease;
 }
 
 .white-icon {
