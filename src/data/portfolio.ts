@@ -78,7 +78,8 @@ export const profile = {
     | undefined,
 
   heroBackground: "/images/hero-bg.png",
-  heroPortrait: "/images/home-hero.png",
+  /** Transparent cut-out (made from home-hero.png) shown over the red brush strokes. */
+  heroPortrait: "/images/hero-cutout.png",
   profilePicture: "/images/profile.png",
 
   primaryAction: { label: "View my work", href: "/#works" },

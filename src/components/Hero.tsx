@@ -33,11 +33,21 @@ function Actions() {
   );
 }
 
+/** Cut-out portrait over a red brush stroke; the bottom fades into the section. */
 function Portrait({ className }: { className: string }) {
   return (
-    <div className={`relative aspect-square w-full shrink-0 overflow-hidden ${className}`}>
-      <img alt={`${profile.name} portrait`} className="size-full object-cover object-top" src={profile.heroPortrait} />
-      <div aria-hidden="true" className="absolute inset-0" style={{ backgroundImage: "var(--pf-hero-gradient)" }} />
+    <div className={`relative w-full shrink-0 ${className}`}>
+      <img
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-[20%] -left-[4%] w-[116%] max-w-none select-none [mask-image:linear-gradient(to_bottom,black_70%,transparent)]"
+        src="/images/hero-brush.png"
+      />
+      <img
+        alt={`${profile.name} portrait`}
+        className="relative block h-auto w-full [mask-image:linear-gradient(to_bottom,black_82%,transparent)]"
+        src={profile.heroPortrait}
+      />
     </div>
   );
 }
@@ -56,7 +66,7 @@ export function Hero() {
             {/* mobile: badge + portrait on top */}
             <div className="flex w-full flex-col items-center gap-6 lg:hidden">
               <Badge />
-              <Portrait className="rounded-pf-lg" />
+              <Portrait className="mt-6 max-w-[420px]" />
             </div>
 
             <div className="flex w-full min-w-0 max-w-full flex-col items-start gap-6 lg:flex-1">
@@ -75,7 +85,7 @@ export function Hero() {
             </div>
 
             {/* desktop portrait */}
-            <Portrait className="hidden max-w-[368px] self-start rounded-t-pf-lg lg:block lg:size-[368px] lg:self-end" />
+            <Portrait className="hidden lg:-mb-16 lg:block lg:w-[440px] lg:self-end xl:w-[560px]" />
 
             <div className="w-full lg:hidden">
               <Actions />
