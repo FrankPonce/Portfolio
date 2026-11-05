@@ -149,6 +149,16 @@ export function About() {
               }))}
             />
             <DetailGroup
+              label="Volunteering"
+              icon="sealCheck"
+              items={profile.volunteering.map((e) => ({
+                title: e.title,
+                subtitle: `${e.company} · ${e.dates}`,
+                logo: e.logo,
+                description: e.description,
+              }))}
+            />
+            <DetailGroup
               label="Education"
               icon="graduationCap"
               items={profile.education.map((e) => ({

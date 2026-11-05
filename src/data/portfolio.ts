@@ -64,13 +64,13 @@ export type Dashboard = {
 
 export const profile = {
   name: "Frank Ponce",
-  role: "Audio Agent Evaluator",
-  headline: "Aspiring Data Scientist with an AI Focus",
+  role: "Multimodal AI Specialist",
+  headline: "Turning data and AI into decisions people can trust",
   intro:
-    "I'm a master's student in Data Science, passionate about utilizing AI to drive business intelligence and insights.",
-  bio: "I'm a graduate student pursuing a Master's in Data Science, eager to kickstart my career. With a focus on business intelligence, I'm currently gaining hands-on experience through an externship at Wayfair, where I'm honing my skills in AI and data analysis.",
+    "Data science master's student (Erasmus Mundus EDISS) who builds AI agents, evaluates multimodal models and turns messy data into clear, explorable dashboards.",
+  bio: "I'm Frank, a data science master's student in the Erasmus Mundus EDISS programme at Åbo Akademi University in Finland, with a BS in Computer Science (Magna Cum Laude) from FIU. My work sits where AI meets business decisions: I've built n8n AI agents that turned retail data into a live category-intelligence dashboard for Wayfair, evaluated conversational and multimodal AI models in English and Spanish at Invisible Technologies and Outlier, and published research on reinforcement learning for post-disaster road restoration. I care about AI that is accurate, explainable and genuinely useful to the people who rely on it.",
   worksIntro:
-    "Explore my work in data science, focusing on AI applications and business intelligence during my externship.",
+    "A selection of projects across AI agents, document intelligence, BI dashboards and research, each with the real deliverables embedded so you can explore them right here.",
 
   /** Little pill above the headline. Set to undefined to hide it. */
   badge: { label: "Pfizer Externship via Extern", logo: "/images/logos/pfizer.png" } as
@@ -151,6 +151,17 @@ export const profile = {
       logo: "/images/logos/cdr.png",
       description:
         "Developed and tested features on the CDR Health Salesforce platform through Jira tickets, analyzed database objects and visualized them in Tableau, and built a dashboard component that made inserting records into the SQL database simpler.",
+    },
+  ] as { title: string; company: string; dates: string; logo?: string; description?: string }[],
+
+  volunteering: [
+    {
+      title: "CS Teacher Volunteer",
+      company: "Wesley Matthews Elementary School",
+      dates: "Aug 2024 - Dec 2024",
+      logo: "/images/logos/wesley-matthews.png",
+      description:
+        "Taught elementary students the fundamentals of programming through interactive Scratch projects, breaking technical ideas down into simple, hands-on lessons.",
     },
   ] as { title: string; company: string; dates: string; logo?: string; description?: string }[],
 
