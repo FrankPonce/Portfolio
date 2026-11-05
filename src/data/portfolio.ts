@@ -64,7 +64,7 @@ export type Dashboard = {
 
 export const profile = {
   name: "Frank Ponce",
-  role: "Multimodal AI Specialist",
+  role: "AI & Data Strategy",
   headline: "Using data and AI to drive smarter business strategy",
   intro:
     "Data science master's student (Erasmus Mundus EDISS) who builds AI agents, analytics and dashboards that turn raw data into business insight and strategic decisions.",
