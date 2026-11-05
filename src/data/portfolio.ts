@@ -65,12 +65,12 @@ export type Dashboard = {
 export const profile = {
   name: "Frank Ponce",
   role: "Multimodal AI Specialist",
-  headline: "Turning data and AI into decisions people can trust",
+  headline: "Using data and AI to drive smarter business strategy",
   intro:
-    "Data science master's student (Erasmus Mundus EDISS) who builds AI agents, evaluates multimodal models and turns messy data into clear, explorable dashboards.",
-  bio: "I'm Frank, a data science master's student in the Erasmus Mundus EDISS programme at Åbo Akademi University in Finland, with a BS in Computer Science (Magna Cum Laude) from FIU. My work sits where AI meets business decisions: I've built n8n AI agents that turned retail data into a live category-intelligence dashboard for Wayfair, evaluated conversational and multimodal AI models in English and Spanish at Invisible Technologies and Outlier, and published research on reinforcement learning for post-disaster road restoration. I care about AI that is accurate, explainable and genuinely useful to the people who rely on it.",
+    "Data science master's student (Erasmus Mundus EDISS) who builds AI agents, analytics and dashboards that turn raw data into business insight and strategic decisions.",
+  bio: "I'm Frank, a data science master's student in the Erasmus Mundus EDISS programme at Åbo Akademi University in Finland, with a BS in Computer Science (Magna Cum Laude) from FIU. I want to help organizations use data and AI to make better strategic decisions: spotting market shifts earlier, understanding competitors, and rethinking how teams work with AI. So far I've built n8n AI agents that turned retail and competitor data into a live category-intelligence dashboard for Wayfair, evaluated conversational and multimodal AI models in English and Spanish at Invisible Technologies and Outlier, and published research on reinforcement learning for post-disaster road restoration. I care about AI that is accurate, explainable and tied to real business outcomes.",
   worksIntro:
-    "A selection of projects across AI agents, document intelligence, BI dashboards and research, each with the real deliverables embedded so you can explore them right here.",
+    "Projects where data and AI meet business decisions: agents for market and competitor intelligence, document automation, BI dashboards and research, each with the real deliverables embedded so you can explore them right here.",
 
   /** Little pill above the headline. Set to undefined to hide it. */
   badge: { label: "Pfizer Externship via Extern", logo: "/images/logos/pfizer.png" } as
@@ -213,7 +213,7 @@ export const profile = {
     { name: "IntelliJ", icon: "/images/tech/intellij.svg" },
   ] as { name: string; icon: string }[],
 
-  skills: ["Data Analysis", "AI Engineering", "Business Intelligence", "Data Science", "Machine Learning"],
+  skills: ["AI for Business Strategy", "Data Analysis", "AI Engineering", "Business Intelligence", "Data Science", "Machine Learning"],
 };
 
 export const projects: Project[] = [
