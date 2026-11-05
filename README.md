@@ -2,7 +2,7 @@
 
 Personal portfolio of **Frank Mediavilla Ponce**, a data science master's student (Erasmus Mundus EDISS, Åbo Akademi University) focused on AI, business intelligence and agent evaluation.
 
-**🔗 Live site:** _coming soon_
+**🔗 Live site: [frankponce.dev](https://frankponce.dev)**
 
 ## What's inside
 

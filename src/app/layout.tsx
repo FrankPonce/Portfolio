@@ -3,6 +3,7 @@ import { profile } from "@/data/portfolio";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://frankponce.dev"),
   title: `${profile.name} | ${profile.role}`,
   description: profile.intro,
   openGraph: { title: `${profile.name} Portfolio`, description: profile.intro, images: [profile.heroPortrait] },
