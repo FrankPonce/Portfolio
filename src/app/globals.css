@@ -15,10 +15,10 @@
   --color-pf-text-subtle: var(--pf-text-subtle);
   --color-pf-text-muted: var(--pf-text-muted);
   --color-pf-heading: var(--pf-heading);
-  --color-pf-accent: var(--pf-accent);
+  --color-pf-accent: crimson;
   --color-pf-on-accent: var(--pf-on-accent);
   --color-pf-link: var(--pf-link);
-  --color-pf-highlight: var(--pf-highlight);
+  --color-pf-highlight: crimson;
   --color-pf-on-highlight: var(--pf-on-highlight);
   --color-pf-tag: var(--pf-tag);
   --color-pf-tag-text: var(--pf-tag-text);
@@ -44,10 +44,10 @@
   --pf-text-subtle: #e5e2e1;
   --pf-text-muted: #adaaaa;
   --pf-heading: #ffffff;
-  --pf-accent: #d05959;
+  --pf-accent: crimson;
   --pf-on-accent: #1c1b1b;
   --pf-link: crimson;
-  --pf-highlight: #dd8686;
+  --pf-highlight: crimson;
   --pf-on-highlight: #1c1b1b;
   --pf-tag: rgba(255, 255, 255, 0.1);
   --pf-tag-text: #fdf8f8;

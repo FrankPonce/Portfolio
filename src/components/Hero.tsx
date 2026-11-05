@@ -40,7 +40,7 @@ function Portrait({ className }: { className: string }) {
       <img
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -top-[20%] -left-[4%] w-[116%] max-w-none select-none [mask-image:linear-gradient(to_bottom,black_70%,transparent)]"
+        className="pointer-events-none absolute -top-[20%] -left-[10%] w-[116%] max-w-none select-none [mask-image:linear-gradient(to_bottom,black_60%,transparent)]"
         src="/images/hero-brush.png"
       />
       <img
