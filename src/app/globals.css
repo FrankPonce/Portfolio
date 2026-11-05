@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens extracted from the original Extern "noir" theme (crimson accent).
+ * Change the values in [data-pf-theme="noir"] below to re-theme the whole site.
+ * Tailwind utilities like bg-pf-surface, text-pf-heading, rounded-pf-lg map to them.
+ */
+@theme inline {
+  --color-pf-canvas: var(--pf-canvas);
+  --color-pf-surface: var(--pf-surface);
+  --color-pf-surface-muted: var(--pf-surface-muted);
+  --color-pf-inverse: var(--pf-inverse);
+  --color-pf-on-inverse: var(--pf-on-inverse);
+  --color-pf-text: var(--pf-text);
+  --color-pf-text-subtle: var(--pf-text-subtle);
+  --color-pf-text-muted: var(--pf-text-muted);
+  --color-pf-heading: var(--pf-heading);
+  --color-pf-accent: var(--pf-accent);
+  --color-pf-on-accent: var(--pf-on-accent);
+  --color-pf-link: var(--pf-link);
+  --color-pf-highlight: var(--pf-highlight);
+  --color-pf-on-highlight: var(--pf-on-highlight);
+  --color-pf-tag: var(--pf-tag);
+  --color-pf-tag-text: var(--pf-tag-text);
+  --color-pf-border: var(--pf-border);
+  --color-pf-divider: var(--pf-divider);
+  --color-pf-success: var(--pf-success);
+
+  --font-pf-display: var(--pf-font-display);
+  --font-pf-body: var(--pf-font-body);
+
+  --radius-pf-lg: var(--pf-radius-lg);
+  --radius-pf-md: var(--pf-radius-md);
+  --radius-pf-pill: var(--pf-radius-pill);
+}
+
+[data-pf-theme="noir"] {
+  --pf-canvas: #111111;
+  --pf-surface: #000000;
+  --pf-surface-muted: #1c1b1b;
+  --pf-inverse: #ffffff;
+  --pf-on-inverse: #1c1b1b;
+  --pf-text: #fdf8f8;
+  --pf-text-subtle: #e5e2e1;
+  --pf-text-muted: #adaaaa;
+  --pf-heading: #ffffff;
+  --pf-accent: #d05959;
+  --pf-on-accent: #1c1b1b;
+  --pf-link: crimson;
+  --pf-highlight: #dd8686;
+  --pf-on-highlight: #1c1b1b;
+  --pf-tag: rgba(255, 255, 255, 0.1);
+  --pf-tag-text: #fdf8f8;
+  --pf-border: #313030;
+  --pf-divider: #313030;
+  --pf-success: #6fff7a;
+  --pf-hero-gradient:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 50%, #000000 100%);
+  --pf-font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --pf-font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --pf-radius-lg: 24px;
+  --pf-radius-md: 16px;
+  --pf-radius-pill: 9999px;
+
+  --pf-noir-pill: rgba(255, 255, 255, 0.1);
+  --pf-noir-card-scrim: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30.751%, rgba(0, 0, 0, 0.9) 61.502%);
+  --pf-noir-image-scrim: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 30.751%, rgba(0, 0, 0, 0.45) 61.502%);
+
+  --pf-nav-height: 4rem;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #111111;
+}
+
+/* Active tab in the top nav pill */
+[data-pf-tab][data-active="true"] {
+  background-color: crimson;
+  color: var(--pf-inverse);
+  font-weight: 500;
+}
