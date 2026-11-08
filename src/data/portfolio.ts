@@ -43,6 +43,8 @@ export type Project = {
   date?: string;
   verified?: boolean;
   inProgress?: boolean;
+  /** Award or placement, shown on the card and the project page (e.g. "Winner, Turku Energia challenge"). */
+  award?: string;
   tags: string[];
   heroImage?: string;
   /** Overview text on the project page (falls back to description). */
@@ -83,12 +85,12 @@ export const profile = {
   headline: "Using data and AI to drive smarter business strategy",
   intro:
     "Data science master's student (Erasmus Mundus EDISS) who builds AI agents, analytics and dashboards that turn raw data into business insight and strategic decisions.",
-  bio: "I'm Frank, a data science master's student in the Erasmus Mundus EDISS programme at Åbo Akademi University in Finland, with a BS in Computer Science (Magna Cum Laude) from FIU. I want to help organizations use data and AI to make better strategic decisions: spotting market shifts earlier, understanding competitors, and rethinking how teams work with AI. So far I've built n8n AI agents that turned retail and competitor data into a live category-intelligence dashboard for Wayfair, evaluated conversational and multimodal AI models in English and Spanish at Invisible Technologies and Outlier, and published research on reinforcement learning for post-disaster road restoration. I care about AI that is accurate, explainable and tied to real business outcomes.",
+  bio: "I'm Frank, a data science master's student in the Erasmus Mundus EDISS programme at Åbo Akademi University in Finland, with a BS in Computer Science (Magna Cum Laude) from FIU. I want to help organizations use data and AI to make better strategic decisions: spotting market shifts earlier, understanding competitors, and rethinking how teams work with AI. So far I've won Turku Energia's forecasting challenge at Since AI 2026 (top 5 overall), built n8n AI agents that turned retail and competitor data into a live category-intelligence dashboard for Wayfair, evaluated conversational and multimodal AI models in English and Spanish at Invisible Technologies and Outlier, and published research on reinforcement learning for post-disaster road restoration. I care about AI that is accurate, explainable and tied to real business outcomes.",
   worksIntro:
     "Projects where data and AI meet business decisions: agents for market and competitor intelligence, document automation, BI dashboards and research, each with the real deliverables embedded so you can explore them right here.",
 
   /** Little pill above the headline. Set to undefined to hide it. */
-  badge: { label: "Pfizer Externship via Extern", logo: "/images/logos/pfizer.png" } as
+  badge: { label: "🏆 Winner, Turku Energia challenge at Since AI 2026" } as
     | { label: string; logo?: string }
     | undefined,
 
@@ -237,15 +239,16 @@ export const projects: Project[] = [
     slug: "tasehinta-imbalance-price-forecasting-turku-energia",
     title: "Tasehinta: AI Decision Support for Turku Energia's Electricity Traders",
     description:
-      "A 48-hour Since AI 2026 build for Turku Energia: a forecast and a situation-room dashboard that warn traders up to 10 hours ahead when the imbalance price will break away from spot, and explain why.",
+      "Winner of Turku Energia's challenge at Since AI 2026 and a top-5 finalist overall: a forecast and situation-room dashboard, built in 48 hours, that warn traders up to 10 hours ahead when the imbalance price will break away from spot, and explain why.",
     company: { name: "Turku Energia, Since AI 2026" },
     date: "Nov 2026",
+    award: "Winner of the Turku Energia challenge · Top 5 finalist overall",
     tags: ["Machine Learning", "Forecasting", "Decision Support", "Energy Markets", "Business Strategy", "Teamwork"],
     heroImage: "/images/projects/tasehinta-dashboard.jpg",
     overview:
       "When a Turku Energia trader's position misses its plan, the difference is settled at the imbalance price. It's set every 15 minutes and can jump hundreds of euros per MWh away from the day-ahead price when the Finnish grid runs short or into surplus. Turku Energia's brief: poor visibility into upcoming prices raises imbalance costs, so help experts spot significant situations earlier and act in time.\n\nOur team of five turned that into a decision-support tool in one weekend. Every hour it forecasts the next 40 quarter-hours: the expected price with an honest 80 % range, which way the grid will be balanced, and the chance of a price spike. A dashboard then shows only what deserves attention, explains the drivers in plain language, and says what to check, never what to trade, so the trader stays in charge.",
     accomplishment:
-      "I built one of the two model components and the final ensemble, ran the team's scoreboard that decided which ideas stayed, and designed the dashboard. Scored with the organisers' own script, the final model was 36.7 % better than their baseline on the validation month and 29.0 % better on an independent second month, with every input used only after it was actually published.",
+      "Our team won Turku Energia's company challenge and reached the top 5 finalists of the whole hackathon, pitching the solution on stage. I built one of the two model components and the final ensemble, ran the team's scoreboard that decided which ideas stayed, and designed the dashboard. Scored with the organisers' own script, the final model was 36.7 % better than their baseline on the validation month and 29.0 % better on an independent second month, with every input used only after it was actually published.",
     featuredOutcome: { url: "https://tasehinta.lovable.app", label: "Live dashboard", wide: true, embed: true },
     results: {
       headline: "36.7 % better than the organisers' baseline, on all four scored metrics",
@@ -296,6 +299,13 @@ export const projects: Project[] = [
           url: "https://github.com/Rdog69/turku-energy-since-ai/blob/master/media/tasehinta-demo.mp4",
           label: "Demo video",
         },
+      },
+      {
+        title: "Pitching it on stage",
+        summary: "The live deck we used for the final pitch, after winning the Turku Energia challenge and reaching the top 5 overall.",
+        details:
+          "The pitch opens on one real September evening, explains the imbalance price and how it's handled today, then walks through what Tasehinta answers every hour, how it works, the results on the organisers' own scoring, the dashboard and what comes next. Click inside the deck or use the arrow keys to move through it.",
+        outcome: { url: "/embeds/tasehinta-pitch.html", label: "Pitch deck" },
       },
     ],
   },

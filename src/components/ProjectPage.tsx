@@ -34,6 +34,12 @@ export function ProjectPage({ project: p }: { project: Project }) {
           <div className="flex flex-col items-center gap-6 text-center">
             <div className="flex max-w-[720px] flex-col items-center gap-2">
               {status && <p className="text-center font-pf-display text-base text-pf-heading leading-5">{status}</p>}
+              {p.award && (
+                <p className="mb-1 inline-flex items-center gap-2 rounded-pf-pill border border-pf-accent/60 bg-pf-accent/10 px-3 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
+                  <span aria-hidden="true">🏆</span>
+                  {p.award}
+                </p>
+              )}
               <h1 className="font-pf-display font-semibold text-[32px] text-pf-heading leading-10 tracking-[-0.54px] md:text-[36px] md:leading-[44px]">
                 {p.title}
               </h1>

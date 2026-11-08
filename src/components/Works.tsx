@@ -10,7 +10,7 @@ import { SectionIntro, Tag, btnBase, btnMd, btnOutline } from "./ui";
 
 function WorkCard({ project: p }: { project: Project }) {
   const meta = metaParts(p);
-  const showMeta = meta.length > 0 || p.verified || p.inProgress;
+  const showMeta = meta.length > 0 || p.verified || p.inProgress || p.award;
   return (
     <article
       className={`group relative flex min-h-[230px] w-full cursor-pointer flex-col items-center justify-center gap-[19px] overflow-hidden rounded-pf-lg bg-pf-surface px-4 py-6 transition-colors hover:bg-pf-surface-muted md:px-6 ${
@@ -63,6 +63,13 @@ function WorkCard({ project: p }: { project: Project }) {
             )}
           </p>
         </div>
+      )}
+
+      {p.award && (
+        <p className="relative inline-flex items-center gap-2 rounded-pf-pill border border-pf-accent/60 bg-pf-accent/10 px-3 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
+          <span aria-hidden="true">🏆</span>
+          {p.award}
+        </p>
       )}
 
       <div className="relative flex w-full flex-col items-center gap-[6.4px] text-center">
