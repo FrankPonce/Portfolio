@@ -3,6 +3,7 @@ import type { Project } from "@/data/portfolio";
 import { Breakdown } from "./Breakdown";
 import { Icon } from "./Icons";
 import { OutcomeCard } from "./OutcomeCard";
+import { ResultsChart } from "./ResultsChart";
 import { metaParts } from "@/lib/project";
 import { Tag, btnBase, btnGhost, btnMd, btnOutline } from "./ui";
 
@@ -100,6 +101,16 @@ export function ProjectPage({ project: p }: { project: Project }) {
                 </div>
               )}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Results vs baseline */}
+      {p.results && (
+        <section className={sectionCls}>
+          <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8">
+            <h2 className={`${h2} max-w-[24ch]`}>{p.results.headline}</h2>
+            <ResultsChart results={p.results} />
           </div>
         </section>
       )}

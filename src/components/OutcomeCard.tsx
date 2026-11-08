@@ -1,6 +1,7 @@
 import type { Outcome } from "@/data/portfolio";
 import { describeOutcome } from "@/lib/outcome";
 import { Icon } from "./Icons";
+import { ScaledFrame } from "./ScaledFrame";
 
 /** Embedded preview of a deliverable (Google Doc/Slides/Drive, Loom) + "Access" button. */
 export function OutcomeCard({ outcome, title, rounded = "rounded-pf-lg" }: { outcome: Outcome; title: string; rounded?: string }) {
@@ -24,15 +25,19 @@ export function OutcomeCard({ outcome, title, rounded = "rounded-pf-lg" }: { out
             outcome.wide ? "h-[70vh] min-h-[420px] max-h-[820px]" : "aspect-video"
           }`}
         >
-          <iframe
-            allow="fullscreen"
-            allowFullScreen
-            className="absolute inset-0 size-full border-0"
-            loading="lazy"
-            referrerPolicy="strict-origin-when-cross-origin"
-            src={embedUrl}
-            title={`${title} preview`}
-          />
+          {outcome.embed && outcome.wide ? (
+            <ScaledFrame src={embedUrl} title={`${title} preview`} />
+          ) : (
+            <iframe
+              allow="fullscreen"
+              allowFullScreen
+              className="absolute inset-0 size-full border-0"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              src={embedUrl}
+              title={`${title} preview`}
+            />
+          )}
         </div>
       )}
       <div

@@ -14,6 +14,8 @@ export type Outcome = {
   wide?: boolean;
   /** Static thumbnail shown instead of a live preview (e.g. a journal cover). */
   image?: string;
+  /** Embed this exact URL as a live preview (for sites that allow framing, e.g. a deployed web app). */
+  embed?: boolean;
 };
 
 export type BreakdownItem = {
@@ -54,6 +56,19 @@ export type Project = {
   breakdown?: BreakdownItem[];
   /** Full-width interactive dashboards (Tableau Public / Power BI links), shown in their own section. */
   dashboards?: Dashboard[];
+  /** Model-vs-baseline comparison, drawn as paired bars. */
+  results?: Results;
+};
+
+export type Results = {
+  /** One-sentence takeaway shown as the section heading. */
+  headline: string;
+  /** Short note under the bars: what was scored and how. */
+  note?: string;
+  baselineLabel: string;
+  modelLabel: string;
+  /** Lower is better for every row. */
+  rows: { metric: string; detail?: string; baseline: number; model: number; decimals?: number }[];
 };
 
 export type Dashboard = {
@@ -218,6 +233,72 @@ export const profile = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "tasehinta-imbalance-price-forecasting-turku-energia",
+    title: "Tasehinta: AI Decision Support for Turku Energia's Electricity Traders",
+    description:
+      "A 48-hour Since AI 2026 build for Turku Energia: a forecast and a situation-room dashboard that warn traders up to 10 hours ahead when the imbalance price will break away from spot, and explain why.",
+    company: { name: "Turku Energia, Since AI 2026" },
+    date: "Nov 2026",
+    tags: ["Machine Learning", "Forecasting", "Decision Support", "Energy Markets", "Business Strategy", "Teamwork"],
+    heroImage: "/images/projects/tasehinta-dashboard.jpg",
+    overview:
+      "When a Turku Energia trader's position misses its plan, the difference is settled at the imbalance price. It's set every 15 minutes and can jump hundreds of euros per MWh away from the day-ahead price when the Finnish grid runs short or into surplus. Turku Energia's brief: poor visibility into upcoming prices raises imbalance costs, so help experts spot significant situations earlier and act in time.\n\nOur team of five turned that into a decision-support tool in one weekend. Every hour it forecasts the next 40 quarter-hours: the expected price with an honest 80 % range, which way the grid will be balanced, and the chance of a price spike. A dashboard then shows only what deserves attention, explains the drivers in plain language, and says what to check, never what to trade, so the trader stays in charge.",
+    accomplishment:
+      "I built one of the two model components and the final ensemble, ran the team's scoreboard that decided which ideas stayed, and designed the dashboard. Scored with the organisers' own script, the final model was 36.7 % better than their baseline on the validation month and 29.0 % better on an independent second month, with every input used only after it was actually published.",
+    featuredOutcome: { url: "https://tasehinta.lovable.app", label: "Live dashboard", wide: true, embed: true },
+    results: {
+      headline: "36.7 % better than the organisers' baseline, on all four scored metrics",
+      note: "Validation month 7 Sep – 4 Oct 2026, scored with Turku Energia's score.py. Lower is better on every metric. On August, used as an independent check, the model was 29.0 % better.",
+      baselineLabel: "Organisers' baseline",
+      modelLabel: "Tasehinta",
+      rows: [
+        { metric: "Price error", detail: "MAE, €/MWh", baseline: 66.2, model: 40.19, decimals: 1 },
+        { metric: "Uncertainty range", detail: "Pinball loss, P10/P90", baseline: 24.18, model: 11.07, decimals: 1 },
+        { metric: "Price spike warnings", detail: "Brier score", baseline: 0.1132, model: 0.084, decimals: 3 },
+        { metric: "Balancing direction", detail: "Brier score", baseline: 0.4509, model: 0.3799, decimals: 3 },
+      ],
+    },
+    breakdown: [
+      {
+        title: "Reframing the problem",
+        summary: "Instead of predicting the price from scratch, we predicted its gap to the day-ahead price, which traders already know.",
+        details:
+          "The day-ahead price is published the afternoon before, so the useful unknown is how far the imbalance price will land from it, and in which direction. Anchoring on it alone removed a third of the baseline's error before any machine learning, and it made the price, range, direction and spike forecasts tell one consistent story.",
+        outcome: {
+          url: "https://github.com/Rdog69/turku-energy-since-ai/blob/deliverables/report/evaluation_report.md",
+          label: "Evaluation report",
+        },
+      },
+      {
+        title: "Building the forecast model",
+        summary: "I built a LightGBM component that combines real-time grid data with two weather models, then averaged it with a teammate's.",
+        details:
+          "My component uses Fingrid's real-time data for the first two hours, where fresh data matters, and ECMWF and ICON-EU weather runs for hours 3 to 10. Probabilities are calibrated on the 28 days before each forecast. Every idea had to win on two separate months to stay: weather runs helped a little on every metric, a second weather model helped consistently, and solar and temperature data were dropped because they didn't. The two-component ensemble beat either part alone.",
+        outcome: {
+          url: "https://github.com/Rdog69/turku-energy-since-ai/blob/deliverables/model/README.md",
+          label: "Model description",
+        },
+      },
+      {
+        title: "Designing the situation room",
+        summary: "A dashboard for shift supervisors and traders: one sentence for the next 10 hours, the few items worth checking, and the reasons behind them.",
+        details:
+          "Price, range, balancing direction and spike risk share one 15-minute time axis. Clicking any quarter-hour shows its drivers and a suggestion of what to review. Users can replay any past hour exactly as it looked then and see how the forecast performed over the last day, week or month. It works in English and Finnish.",
+        image: "/images/projects/tasehinta-dashboard-fi.jpg",
+      },
+      {
+        title: "Proving it can be trusted",
+        summary: "21 automated leakage tests guarantee the model never used data before it was published.",
+        details:
+          "A forecast that peeks at the future is worthless in operations, and the organisers scored it as zero. Every input row is only used from the moment it became available, enforced by tests. The submitted forecast file passed the organisers' validator with no errors or warnings, and the five-minute demo walks through the forecast, its uncertainty, the alerts and the drivers.",
+        outcome: {
+          url: "https://github.com/Rdog69/turku-energy-since-ai/blob/master/media/tasehinta-demo.mp4",
+          label: "Demo video",
+        },
+      },
+    ],
+  },
   {
     slug: "pfizer-advanced-ai-powered-document-insights-data-extraction-externship",
     title: "Pfizer Advanced: AI-Powered Document Insights & Data Extraction Externship",

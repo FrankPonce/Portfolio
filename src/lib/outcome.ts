@@ -12,7 +12,9 @@ export function describeOutcome(outcome: Outcome): { embedUrl?: string; label: s
   const tableau = url.match(/public\.tableau\.com\/(?:app\/profile\/[^/]+\/viz|views)\/([^/?#]+)\/([^/?#]+)/);
   const powerbi = /app\.powerbi\.com\/view\?r=/.test(url);
 
-  if (gdoc) {
+  if (outcome.embed) {
+    embedUrl = url;
+  } else if (gdoc) {
     embedUrl = `https://docs.google.com/${gdoc[1]}/d/${gdoc[2]}/preview`;
     label ??= { document: "Google Docs", presentation: "Google Slides", spreadsheets: "Google Sheets" }[
       gdoc[1] as "document" | "presentation" | "spreadsheets"
