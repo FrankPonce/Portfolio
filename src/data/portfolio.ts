@@ -140,7 +140,7 @@ export const profile = {
       dates: "In progress",
       logo: "/images/logos/cadetx.png",
       description:
-        "Building a hiring-intelligence pipeline from Google, OpenAI, NVIDIA and Anthropic job postings, running all four Scrum roles solo: legally reviewed sources, four collectors (2,170 live and 4,111 historical postings) and a 4,909-posting NLP corpus so far, with skill extraction, trend analysis and demand forecasting next.",
+        "Building a hiring-intelligence pipeline from Google, OpenAI, NVIDIA and Anthropic job postings, running all four Scrum roles solo. Six of twelve sprints done: compliant collectors, an NLP pipeline over 8,000+ postings, a 212-skill taxonomy, multi-year hiring trends and a competitor comparison, with demand forecasting next.",
     },
     {
       title: "AI Training Specialist",
@@ -375,7 +375,7 @@ export const projects: Project[] = [
     overview:
       "Job postings show what a company plans to do before it shows up in earnings reports or product launches. In this 12-sprint CadetX project I'm building an end-to-end hiring-intelligence pipeline for four frontier AI companies: collect postings every week, clean them with NLP, extract skills, track hiring velocity, forecast demand and compare the companies, ending in decision-ready insights for strategy, talent and product teams.\n\nI'm running it solo, rotating through the Scrum Lead, Data Quality, Documentation and Tech Lead roles each sprint, with every decision, dataset and weekly note kept in a public GitHub repository.",
     accomplishment:
-      "Three of twelve sprints are done. I reviewed the terms and robots.txt of every source and found a compliant collection route for each company, built four collectors that took a first snapshot of 2,170 live postings plus 4,111 historical ones, and cleaned them into a unified 4,909-posting NLP corpus. Skill extraction is next.",
+      "Six of twelve sprints are done. I built compliant collectors for all four companies, an NLP pipeline over 8,000+ postings, a 212-skill taxonomy, and multi-year hiring histories rebuilt from Internet Archive captures. The signals are already clear: Anthropic's open roles grew about 9× in two years, and each company has a distinct hiring fingerprint, from Anthropic's safety and go-to-market roles to NVIDIA's GPU and HPC stack. Demand forecasting is next.",
     breakdown: [
       {
         title: "Finding legal data sources",
@@ -397,6 +397,27 @@ export const projects: Project[] = [
         details:
           "The pipeline splits each posting into responsibilities, requirements and pay, removes company blurbs and legal text, extracts salary ranges, and lemmatizes the text with spaCy, so skills can be compared fairly across companies in the next sprint.",
         outcome: { url: "https://github.com/FrankPonce/competitor-demand-prediction/blob/main/reports/preprocessing/summary.md", label: "Preprocessing summary" },
+      },
+      {
+        title: "Extracting skills",
+        summary: "A shared 212-skill taxonomy across 19 categories, turning free-text postings into comparable features.",
+        details:
+          "Skills, role family, seniority, years of experience and education requirements are extracted from each posting and checked by hand on a sample (89 % precision). The same taxonomy covers all four companies, so a skill means the same thing everywhere.",
+        outcome: { url: "https://github.com/FrankPonce/competitor-demand-prediction/blob/main/reports/skills/summary.md", label: "Skills summary" },
+      },
+      {
+        title: "Reading hiring trends",
+        summary: "Multi-year open-role histories, rebuilt from Internet Archive captures and validated against daily data within 1.2 %.",
+        details:
+          "Weekly flows of new and closed postings show who is accelerating and in which teams. Anthropic grew from about 74 open roles at the end of 2024 to about 670 two years later, Google's open roles rose about 70 % since 2023 with a clear yearly cycle, and the role mix shows where each company is shifting its bets.",
+        image: "/images/projects/cadetx-open-roles.png",
+      },
+      {
+        title: "Comparing the competitors",
+        summary: "Each company's hiring fingerprint: the skills it over-indexes on compared with the other three.",
+        details:
+          "On like-for-like data, Anthropic leans on safety and go-to-market roles, OpenAI on APIs and platform, NVIDIA on its GPU, HPC and robotics stack, and Google on cloud sales, generative AI and a management layer. The comparison also covers seniority, location footprint and disclosed pay.",
+        image: "/images/projects/cadetx-distinctive-skills.png",
       },
     ],
   },
