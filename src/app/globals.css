@@ -103,86 +103,43 @@ body {
  * clipped to a hexagon ring (outer shape minus the inner one), so the inside stays see-through.
  * Tip length scales with the font size; override with --pf-angle-tip.
  */
-.pf-angle {
-  --pf-angle-tip: 0.75em;
-  position: relative;
-  border-radius: 0;
-  clip-path: polygon(
-    var(--pf-angle-tip) 0,
-    calc(100% - var(--pf-angle-tip)) 0,
-    100% 50%,
-    calc(100% - var(--pf-angle-tip)) 100%,
-    var(--pf-angle-tip) 100%,
-    0 50%
-  );
-}
+@layer components {
+  .pf-angle {
+    --pf-angle-tip: 0.75em;
+    position: relative;
+    border-radius: 0;
+    clip-path: polygon(
+      var(--pf-angle-tip) 0,
+      calc(100% - var(--pf-angle-tip)) 0,
+      100% 50%,
+      calc(100% - var(--pf-angle-tip)) 100%,
+      var(--pf-angle-tip) 100%,
+      0 50%
+    );
+  }
 
-.pf-angle-ring::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: var(--pf-angle-stroke, currentColor);
-  clip-path: polygon(
-    evenodd,
-    var(--pf-angle-tip) 0,
-    calc(100% - var(--pf-angle-tip)) 0,
-    100% 50%,
-    calc(100% - var(--pf-angle-tip)) 100%,
-    var(--pf-angle-tip) 100%,
-    0 50%,
-    var(--pf-angle-tip) 0,
-    var(--pf-angle-tip) 1px,
-    1.6px 50%,
-    var(--pf-angle-tip) calc(100% - 1px),
-    calc(100% - var(--pf-angle-tip)) calc(100% - 1px),
-    calc(100% - 1.6px) 50%,
-    calc(100% - var(--pf-angle-tip)) 1px,
-    var(--pf-angle-tip) 1px
-  );
-}
-
-/* Nordic cut-corner tile with a thin outline (tech stack). */
-.pf-chamfer {
-  --pf-chamfer: 10px;
-  position: relative;
-  clip-path: polygon(
-    var(--pf-chamfer) 0,
-    calc(100% - var(--pf-chamfer)) 0,
-    100% var(--pf-chamfer),
-    100% calc(100% - var(--pf-chamfer)),
-    calc(100% - var(--pf-chamfer)) 100%,
-    var(--pf-chamfer) 100%,
-    0 calc(100% - var(--pf-chamfer)),
-    0 var(--pf-chamfer)
-  );
-}
-
-.pf-chamfer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: var(--pf-chamfer-stroke, currentColor);
-  clip-path: polygon(
-    evenodd,
-    var(--pf-chamfer) 0,
-    calc(100% - var(--pf-chamfer)) 0,
-    100% var(--pf-chamfer),
-    100% calc(100% - var(--pf-chamfer)),
-    calc(100% - var(--pf-chamfer)) 100%,
-    var(--pf-chamfer) 100%,
-    0 calc(100% - var(--pf-chamfer)),
-    0 var(--pf-chamfer),
-    var(--pf-chamfer) 0,
-    calc(var(--pf-chamfer) + 0.4px) 1px,
-    1px calc(var(--pf-chamfer) + 0.4px),
-    1px calc(100% - var(--pf-chamfer) - 0.4px),
-    calc(var(--pf-chamfer) + 0.4px) calc(100% - 1px),
-    calc(100% - var(--pf-chamfer) - 0.4px) calc(100% - 1px),
-    calc(100% - 1px) calc(100% - var(--pf-chamfer) - 0.4px),
-    calc(100% - 1px) calc(var(--pf-chamfer) + 0.4px),
-    calc(100% - var(--pf-chamfer) - 0.4px) 1px,
-    calc(var(--pf-chamfer) + 0.4px) 1px
-  );
+  .pf-angle-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--pf-angle-stroke, currentColor);
+    clip-path: polygon(
+      evenodd,
+      var(--pf-angle-tip) 0,
+      calc(100% - var(--pf-angle-tip)) 0,
+      100% 50%,
+      calc(100% - var(--pf-angle-tip)) 100%,
+      var(--pf-angle-tip) 100%,
+      0 50%,
+      var(--pf-angle-tip) 0,
+      var(--pf-angle-tip) 1px,
+      1.6px 50%,
+      var(--pf-angle-tip) calc(100% - 1px),
+      calc(100% - var(--pf-angle-tip)) calc(100% - 1px),
+      calc(100% - 1.6px) 50%,
+      calc(100% - var(--pf-angle-tip)) 1px,
+      var(--pf-angle-tip) 1px
+    );
+  }
 }

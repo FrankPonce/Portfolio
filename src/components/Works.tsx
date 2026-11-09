@@ -90,7 +90,7 @@ function WorkCard({ project: p }: { project: Project }) {
       {/* "there's more inside" cue */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute right-4 bottom-4 flex size-10 items-center justify-center rounded-full border border-pf-border bg-pf-surface/70 text-pf-text-subtle backdrop-blur-sm transition-all duration-200 group-hover:translate-x-1 group-hover:border-pf-accent group-hover:text-pf-accent md:right-6 md:bottom-6"
+        className="pf-angle pf-angle-ring pointer-events-none absolute right-4 bottom-4 flex h-10 w-14 items-center justify-center bg-pf-surface/70 text-pf-text-subtle backdrop-blur-sm transition-all duration-200 [--pf-angle-stroke:var(--pf-text-muted)] [--pf-angle-tip:14px] group-hover:translate-x-1 group-hover:text-pf-accent group-hover:[--pf-angle-stroke:crimson] md:right-6 md:bottom-6"
       >
         <Icon name="caretRight" className="size-5" />
       </span>

@@ -1,4 +1,5 @@
 import { profile } from "@/data/portfolio";
+import { techIconPaths } from "@/data/techIcons";
 import { Icon, type IconName } from "./Icons";
 import { Divider, SectionIntro, Tag } from "./ui";
 
@@ -77,20 +78,30 @@ function TechStack() {
   return (
     <div className="flex w-full flex-col gap-4">
       <p className="font-pf-display text-pf-text-subtle text-sm leading-4">Tech stack</p>
-      <ul className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 lg:grid-cols-3">
-        {profile.techStack.map((t) => (
-          <li
-            key={t.name}
-            className="pf-chamfer group flex h-[112px] flex-col items-center justify-center gap-2.5 px-1 text-center [--pf-chamfer-stroke:color-mix(in_srgb,crimson_75%,transparent)] transition-colors duration-200 hover:bg-pf-accent/10 hover:[--pf-chamfer-stroke:crimson]"
-          >
-            <img
-              alt=""
-              className="size-9 object-contain grayscale brightness-150 transition duration-200 group-hover:grayscale-0 group-hover:brightness-100"
-              src={t.icon}
-            />
-            <span className="font-pf-body text-[12px] text-pf-text-subtle leading-[14px]">{t.name}</span>
-          </li>
-        ))}
+      <ul className="grid grid-cols-3 gap-x-4 gap-y-7 sm:grid-cols-4 lg:grid-cols-3">
+        {profile.techStack.map((t) => {
+          const d = techIconPaths[t.name];
+          return (
+            <li key={t.name} className="group flex flex-col items-center gap-2.5 text-center">
+              {d ? (
+                <svg
+                  aria-hidden="true"
+                  className="size-11 overflow-visible text-pf-accent transition-[filter] duration-200 group-hover:drop-shadow-[0_0_6px_crimson]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinejoin="round"
+                  strokeWidth={1.8}
+                  viewBox="0 0 24 24"
+                >
+                  <path d={d} fillRule="evenodd" vectorEffect="non-scaling-stroke" />
+                </svg>
+              ) : (
+                <img alt="" className="size-11 object-contain" src={t.icon} />
+              )}
+              <span className="font-pf-body text-[12px] text-pf-text-subtle leading-[14px]">{t.name}</span>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
