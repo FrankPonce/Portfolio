@@ -40,16 +40,17 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
       className="sticky top-0 z-40 w-full border-pf-divider border-b bg-pf-surface px-4 md:px-16 lg:h-20"
     >
       <div className="mx-auto w-full max-w-[1280px] flex h-full flex-row items-center justify-between gap-4 py-4">
-        <div className="flex min-w-0 items-center lg:w-[358px]">
-          <div className="flex min-w-0 flex-col justify-center gap-0.5 py-2">
-            <p className="flex items-center gap-2 truncate font-pf-gothic text-[24px] leading-7 text-pf-heading lg:text-[30px] lg:leading-8">
-              <SigilStar className="size-3.5 shrink-0 text-pf-accent lg:size-4" />
+        <div className="flex min-w-0 items-center lg:w-[400px]">
+          <p className="flex min-w-0 items-center gap-1.5 py-2 sm:gap-2.5">
+            <SigilStar className="size-3 shrink-0 text-pf-accent sm:size-4 lg:size-5" />
+            <span className="whitespace-nowrap font-pf-gothic text-[24px] text-pf-heading leading-none sm:text-[30px] lg:text-[38px]">
               {profile.name}
-            </p>
-            <p className="hidden truncate text-[16px] text-pf-text-muted leading-5 lg:block font-pf-body">
+            </span>
+            <span aria-hidden="true" className="hidden h-6 w-px shrink-0 bg-pf-text-muted/50 lg:block" />
+            <span className="hidden truncate font-pf-body text-[15px] text-pf-text-muted leading-5 lg:block">
               {profile.role}
-            </p>
-          </div>
+            </span>
+          </p>
         </div>
 
         <nav
