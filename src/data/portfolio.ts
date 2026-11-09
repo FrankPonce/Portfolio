@@ -111,9 +111,8 @@ export const profile = {
     location: "Turku, Finland",
   },
 
-  // TIP: download your resume PDF into /public and change this to "/resume.pdf"
-  resumeUrl:
-    "https://portfolio-assets.extern.com/portfolios/frank-ponce/assets/resume_a1ea5816-6dc2-464f-a013-2b644a54017a.pdf",
+  /** One-page CV, generated from resumes/cv-general.html (not committed). */
+  resumeUrl: "/cv.pdf",
 
   externships: [
     {
@@ -136,7 +135,7 @@ export const profile = {
       dates: "In progress",
       logo: "/images/logos/cadetx.png",
       description:
-        "Part of a four-person data science team building a hiring-intelligence system from public job-posting data: collecting postings legally, extracting skills with NLP, analyzing hiring trends and forecasting competitor demand, working in weekly Scrum sprints with rotating lead roles.",
+        "Building a hiring-intelligence pipeline from Google, OpenAI, NVIDIA and Anthropic job postings, running all four Scrum roles solo: legally reviewed sources, four collectors (2,170 live and 4,111 historical postings) and a 4,909-posting NLP corpus so far, with skill extraction, trend analysis and demand forecasting next.",
     },
     {
       title: "AI Training Specialist",
@@ -338,13 +337,38 @@ export const projects: Project[] = [
     slug: "cadetx-competitor-demand-prediction-using-job-postings",
     title: "Competitor Demand Prediction Using Job Postings",
     description:
-      "A CadetX virtual work experience: using NLP and forecasting on job-posting data from major tech and AI companies to predict competitor demand, skill trends and market direction.",
+      "A CadetX virtual work experience: reading Google, OpenAI, NVIDIA and Anthropic's public job postings as signals of where each company is heading, with NLP, trend analysis and demand forecasting.",
     company: { name: "CadetX", logo: "/images/logos/cadetx.png" },
     inProgress: true,
-    tags: ["NLP", "Forecasting", "Python", "Competitive Intelligence", "Teamwork"],
+    tags: ["NLP", "Forecasting", "Python", "Competitive Intelligence", "Data Ethics"],
     heroImage: "/images/projects/cadetx.jpg",
     overview:
-      "Job postings show where a company is going, not where it has been. In this 3-month CadetX project I'm part of a team of four data scientists, each specializing in one tech / AI company, building a single hiring-intelligence system from public job-posting data.\n\nThe work runs from legal data sourcing and collection through NLP preprocessing, skill extraction and hiring-trend analysis, to demand forecasting, company similarity scoring and a final mentor-reviewed presentation. The team works in weekly Scrum sprints with rotating roles (Scrum Leader, Data Quality, Documentation and Technical Lead) and keeps all code, data and notes in a shared GitHub repository.",
+      "Job postings show what a company plans to do before it shows up in earnings reports or product launches. In this 12-sprint CadetX project I'm building an end-to-end hiring-intelligence pipeline for four frontier AI companies: collect postings every week, clean them with NLP, extract skills, track hiring velocity, forecast demand and compare the companies, ending in decision-ready insights for strategy, talent and product teams.\n\nI'm running it solo, rotating through the Scrum Lead, Data Quality, Documentation and Tech Lead roles each sprint, with every decision, dataset and weekly note kept in a public GitHub repository.",
+    accomplishment:
+      "Three of twelve sprints are done. I reviewed the terms and robots.txt of every source and found a compliant collection route for each company, built four collectors that took a first snapshot of 2,170 live postings plus 4,111 historical ones, and cleaned them into a unified 4,909-posting NLP corpus. Skill extraction is next.",
+    breakdown: [
+      {
+        title: "Finding legal data sources",
+        summary: "Reviewed every company's terms and robots.txt and documented a compliant route for each, before collecting anything.",
+        details:
+          "Anthropic and OpenAI publish their postings through documented public job-board APIs (Greenhouse and Ashby), with CC BY history from Epoch AI since March 2026. NVIDIA's Workday board allows its sitemap-listed job pages, and Google's careers results pages allow first pages only, so Google is a deliberate sample. All evidence is in a source register.",
+        outcome: { url: "https://github.com/FrankPonce/competitor-demand-prediction/blob/main/docs/sprints/sprint-01-data-sources-legal.md", label: "Sprint 1 review" },
+      },
+      {
+        title: "Building the collectors",
+        summary: "Four rate-limited collectors that respect robots.txt, scrub personal data and keep each posting's source URL.",
+        details:
+          "The first snapshot collected 675 Anthropic, 816 OpenAI, 100 NVIDIA and 579 Google postings, plus 4,111 historical Anthropic and OpenAI postings. Weekly snapshots track when each posting first appeared and when it closed, which later becomes hiring velocity. Each company has a data collection report covering sources, legal checks, fields and limitations.",
+        outcome: { url: "https://github.com/FrankPonce/competitor-demand-prediction/tree/main/reports/data-collection", label: "Data collection reports" },
+      },
+      {
+        title: "Cleaning the text for NLP",
+        summary: "A unified 4,909-posting corpus, with 23–54 % of each description stripped as boilerplate.",
+        details:
+          "The pipeline splits each posting into responsibilities, requirements and pay, removes company blurbs and legal text, extracts salary ranges, and lemmatizes the text with spaCy, so skills can be compared fairly across companies in the next sprint.",
+        outcome: { url: "https://github.com/FrankPonce/competitor-demand-prediction/blob/main/reports/preprocessing/summary.md", label: "Preprocessing summary" },
+      },
+    ],
   },
   {
     slug: "wayfair-ai-agent-engineering-for-business-intelligence-externship",
