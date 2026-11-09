@@ -14,7 +14,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-[1280px] flex flex-col gap-6 px-6 md:px-16">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
           <div className={col}>
-            <p className="font-medium font-pf-body text-base text-pf-text leading-5">{profile.name}</p>
+            <p className="font-pf-gothic text-[22px] text-pf-text leading-7">{profile.name}</p>
             <p className={label}>{profile.role}</p>
           </div>
           {vr}

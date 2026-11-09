@@ -1,3 +1,4 @@
+import { SigilDivider } from "./Sigil";
 // Small shared building blocks (class names taken from the original Extern markup).
 
 export const btnBase =
@@ -26,9 +27,12 @@ export function SectionIntro({ title, text }: { title: string; text?: string }) 
   return (
     <section className="flex flex-col items-center px-4 py-6 md:px-16 md:py-12">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-start gap-4 text-left md:items-center md:gap-6 md:text-center">
-        <h1 className="font-pf-display font-semibold text-[22px] text-pf-heading leading-7 md:text-[48px] md:leading-[52px] md:tracking-[-0.96px]">
-          {title}
-        </h1>
+        <div className="flex flex-col items-start gap-3 md:items-center">
+          <h1 className="font-pf-heading font-semibold text-[30px] text-pf-heading leading-8 md:text-[56px] md:leading-[60px]">
+            {title}
+          </h1>
+          <SigilDivider className="h-5 w-60 text-pf-accent md:h-7 md:w-[22rem]" />
+        </div>
         {text && (
           <p className="max-w-[700px] font-pf-display text-lg text-pf-text-subtle leading-6 tracking-[-0.5px] md:text-[22px] md:leading-7 md:tracking-[-1px]">
             {text}

@@ -8,7 +8,7 @@ import { metaParts } from "@/lib/project";
 import { Tag, btnBase, btnGhost, btnMd, btnOutline } from "./ui";
 
 const sectionCls = "border-pf-border border-t bg-pf-canvas px-4 py-10 md:px-16 md:py-12";
-const h2 = "font-normal font-pf-display text-[32px] text-pf-text leading-10 tracking-[-0.48px]";
+const h2 = "font-semibold font-pf-heading text-[36px] text-pf-text leading-10";
 const body = "font-pf-display text-base text-pf-text leading-5 whitespace-pre-line";
 
 export function ProjectPage({ project: p }: { project: Project }) {

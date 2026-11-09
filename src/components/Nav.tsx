@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { profile } from "@/data/portfolio";
+import { SigilStar } from "./Sigil";
 import { Icon } from "./Icons";
 
 type Tab = "home" | "works" | "about";
@@ -41,7 +42,8 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
       <div className="mx-auto w-full max-w-[1280px] flex h-full flex-row items-center justify-between gap-4 py-4">
         <div className="flex min-w-0 items-center lg:w-[358px]">
           <div className="flex min-w-0 flex-col justify-center gap-0.5 py-2">
-            <p className="truncate font-medium text-[18px] leading-6 font-pf-body text-pf-heading lg:text-[24px] lg:leading-7">
+            <p className="flex items-center gap-2 truncate font-pf-gothic text-[24px] leading-7 text-pf-heading lg:text-[30px] lg:leading-8">
+              <SigilStar className="size-3.5 shrink-0 text-pf-accent lg:size-4" />
               {profile.name}
             </p>
             <p className="hidden truncate text-[16px] text-pf-text-muted leading-5 lg:block font-pf-body">

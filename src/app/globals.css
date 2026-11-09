@@ -27,6 +27,8 @@
   --color-pf-success: var(--pf-success);
 
   --font-pf-display: var(--pf-font-display);
+  --font-pf-gothic: var(--pf-font-gothic);
+  --font-pf-heading: var(--pf-font-heading);
   --font-pf-body: var(--pf-font-body);
 
   --radius-pf-lg: var(--pf-radius-lg);
@@ -59,6 +61,9 @@
     linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 50%, #000000 100%);
   --pf-font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
   --pf-font-body: "Inter", system-ui, -apple-system, sans-serif;
+  /* gothic accents: blackletter wordmark + readable gothic headings */
+  --pf-font-gothic: "UnifrakturMaguntia", "Grenze Gotisch", serif;
+  --pf-font-heading: "Grenze Gotisch", "Bricolage Grotesque", serif;
   --pf-radius-lg: 24px;
   --pf-radius-md: 16px;
   --pf-radius-pill: 9999px;
