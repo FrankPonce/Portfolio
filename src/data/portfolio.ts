@@ -116,13 +116,13 @@ export const profile = {
 
   externships: [
     {
-      title: "Pfizer Advanced: AI-Powered Document Insights & Data Extraction Externship",
-      subtitle: "In progress",
+      title: "Pfizer: AI document intelligence for pharmaceutical PDFs",
+      subtitle: "Externship via Extern · In progress",
       logo: "/images/logos/pfizer.png",
     },
     {
-      title: "Wayfair AI Agent Engineering for Business Intelligence Externship",
-      subtitle: "Completed · Aug 2026",
+      title: "Wayfair: AI agents for category intelligence",
+      subtitle: "Externship via Extern · Completed Aug 2026",
       logo: "/images/logos/wayfair.png",
     },
   ] as { title: string; subtitle: string; logo?: string }[],
@@ -310,25 +310,25 @@ export const projects: Project[] = [
   },
   {
     slug: "pfizer-advanced-ai-powered-document-insights-data-extraction-externship",
-    title: "Pfizer Advanced: AI-Powered Document Insights & Data Extraction Externship",
+    title: "Pfizer: AI Document Intelligence for Pharmaceutical PDFs",
     description:
-      "Prototype AI-powered document intelligence with Pfizer—using OCR, LLMs, and RAG to automate real enterprise PDF workflows and build a standout portfolio project.",
+      "Prototyping an AI pipeline that turns scanned pharmaceutical vendor documents into structured, searchable data, using OCR, LLMs and retrieval-augmented generation.",
     company: { name: "Pfizer", logo: "/images/logos/pfizer.png" },
     verified: true,
     inProgress: true,
-    tags: ["AI & ML", "Python", "Document Intelligence", "Presentation Skills"],
+    tags: ["Python", "OCR", "LLMs", "RAG", "Document Intelligence"],
     heroImage: "/images/projects/pfizer.jpg",
     overview:
-      "The externship focused on prototyping AI document-intelligence workflows for enterprise PDFs, combining OCR, retrieval-augmented generation, and LLM techniques. The work summarized technical foundations, compared model approaches, and produced explainable notes on LLM architectures and their components.",
+      "Pharmaceutical suppliers send quality, compliance and technical documents as PDFs, often scanned with no machine-readable text. In this 10-week Pfizer program, run through Extern, I'm prototyping the pipeline that makes them usable: OCR and layout-aware extraction in Python, document classification and routing, and retrieval-augmented generation so people can ask a document questions instead of reading it end to end.",
     accomplishment:
-      "I classified documents from a vendor file into quality, compliance, and technical categories, cataloged date formats present, and determined that pages lacked machine-readable text, requiring OCR for structured-data extraction.",
+      "The first stage is done: I audited a real vendor document file, sorted it into quality, compliance and technical documents, catalogued the date formats an extractor will have to handle, and found that its pages had no machine-readable text, which made OCR the first step of the pipeline.",
     breakdown: [
       {
-        title: "How AI Reads Pharmaceutical Documents",
+        title: "Auditing a pharmaceutical vendor file",
         summary:
-          "I reviewed a sample pharmaceutical vendor file and identified document types, date formats, and OCR needs.",
+          "Mapped what a real vendor file contains before automating anything: document types, date formats and whether the text is machine-readable.",
         details:
-          "I inspected the provided vendor file, classified documents (quality, compliance, technical), cataloged date formats found, and noted that pages lacked machine-readable text so OCR was required to extract structured data.",
+          "I classified each document as quality, compliance or technical, catalogued every date format so the extractor can normalise them, and confirmed the pages were scanned images without a text layer, so OCR has to run before any structured extraction.",
         image: "/images/projects/pfizer-step-1.png",
       },
     ],
@@ -337,7 +337,7 @@ export const projects: Project[] = [
     slug: "cadetx-competitor-demand-prediction-using-job-postings",
     title: "Competitor Demand Prediction Using Job Postings",
     description:
-      "A CadetX virtual work experience: reading Google, OpenAI, NVIDIA and Anthropic's public job postings as signals of where each company is heading, with NLP, trend analysis and demand forecasting.",
+      "Reading Google, OpenAI, NVIDIA and Anthropic's public job postings as early signals of where each company is heading, using NLP, trend analysis and demand forecasting.",
     company: { name: "CadetX", logo: "/images/logos/cadetx.png" },
     inProgress: true,
     tags: ["NLP", "Forecasting", "Python", "Competitive Intelligence", "Data Ethics"],
@@ -372,18 +372,18 @@ export const projects: Project[] = [
   },
   {
     slug: "wayfair-ai-agent-engineering-for-business-intelligence-externship",
-    title: "Wayfair AI Agent Engineering for Business Intelligence Externship",
+    title: "Wayfair: AI Agents for Category Intelligence",
     description:
-      "Learn one of the most in-demand skills shaping the future of work: building AI agents. In this externship, you’ll step into the role of an AI Agent Developer and use n8n to design agents that think, plan, and act on real data — automating insights, decisions, and workflows. No coding experience required. By the end, you’ll create a live dashboard powered by your own AI agents, gaining hands-on experience that applies to any role or industry — from marketing and consulting to product management and data science.",
+      "Four n8n AI agents that track area-rug trends and competitors across Amazon, Walmart and Wayfair, and turn the findings into a content strategy and a live category-intelligence dashboard.",
     company: { name: "Wayfair", logo: "/images/logos/wayfair.png" },
     date: "Aug 2026",
     verified: true,
-    tags: ["AI Workflow Design", "AI Agent Development", "Web Scraping & Data Extraction", "Presentation Skills"],
+    tags: ["n8n", "AI Agents", "LLMs", "Competitive Intelligence", "Retail Analytics"],
     heroImage: "/images/projects/wayfair.png",
     overview:
-      "During my externship with Wayfair, I developed AI agents for business intelligence, focusing on market trends and competitive analysis. By utilizing n8n, I created agents that automated data insights, enhancing decision-making processes. The culmination of my work was a live dashboard powered by these agents, showcasing practical applications of AI in the retail sector.",
+      "A category team needs to know what shoppers will want next and where competitors leave gaps, and that research is slow by hand. In this Wayfair program, run through Extern, I built it as a set of n8n AI agents for the area-rug category: one finds emerging trends in product and social data, one benchmarks competitors' pricing and assortment, one turns both into on-brand content ideas, and one merges everything into a single live dashboard.",
     accomplishment:
-      "I produced tested prompt templates and moodboard outputs, a packaged trend report with a Loom demo, and a competitor-analysis PDF based on a unified retailer dataset.",
+      "I built and tested four working agents and their outputs: a market-trend report, a competitor analysis across Amazon, Walmart and Wayfair products, a content-strategy report, and the Area Rug Category Intelligence Dashboard shown here, with video walkthroughs of the workflows.",
     // Previously the Google Slides deck:
     // https://docs.google.com/presentation/d/1rBJiVlPQgJw5gAPcbkuwcFlJ_jhRbTt5-VyuWLCGfSE/edit?usp=sharing
     featuredOutcome: {
@@ -394,61 +394,61 @@ export const projects: Project[] = [
     certificateUrl: "https://extern.com/portfolios/api/certificates/ec33dfec-7420-4fca-9675-fcae9d0479c7",
     breakdown: [
       {
-        title: "Getting Started with AI Agents - Moodboard Generator",
+        title: "Moodboard generator",
         summary:
-          "I built and refined a Prompt Node that turned short style inputs into detailed visual prompts for a moodboard generator.",
+          'A prompt step that turns a short style idea like "beige round rug" into a detailed image prompt for a visual moodboard.',
         details:
-          'During the externship I created prompt templates and tested outputs. I translated brief inputs (e.g., "beige round rug") into full visual prompts, reviewed generated moodboards, and noted where system-message tweaks improved style and composition.',
+          "I designed and iterated the prompt templates and system message, compared the generated moodboards side by side, and kept only the changes that improved style and composition.",
         outcome: {
           url: "https://docs.google.com/document/d/1dATsvZH7sXvLisfRlk9o5QbC9Jga5km3D7d3xJKChEE/edit?usp=sharing",
         },
       },
       {
-        title: "Building the Consumer Trend Discovery AI Agent",
+        title: "Trend discovery agent",
         summary:
-          "I built an end-to-end Trend Discovery Agent and packaged its final report, visuals, and demo recording as the project deliverable.",
+          "Finds emerging rug trends by combining Amazon products with Instagram, Pinterest and design-blog signals.",
         details:
-          "The project scoped rug trends, assembled Amazon and social signals, ran AI classification and image generation, and produced a packaged trend report PDF plus a demo video. The submission included the final report, PDF, and Loom recording.",
+          "The agent filters and standardises the product data, uses LLMs to identify the trend segments worth acting on, generates a moodboard image for each, and assembles a market-trend report covering market size, colour palettes, risks and recommendations.",
         outcome: { url: "https://drive.google.com/file/d/1usMxweFUVYHpePtpBiUo4EaIKxoN4s_A/view?usp=sharing" },
         workflow: "/workflows/trend-discovery-agent.json",
       },
       {
-        title: "Building the Competitor Monitoring AI Agent",
+        title: "Competitor monitoring agent",
         summary:
-          "I delivered a Competitor Monitoring Agent that collected, analyzed, and assembled competitor product data into a structured report for the rugs category.",
+          "Benchmarks Wayfair against Amazon and Walmart on price, features and reviews, and shows where the gaps are.",
         details:
-          "During the externship I combined retailer product feeds into a unified dataset, built AI prompts to analyze pricing, features, and reviews, and produced a PDF report summarizing competitor gaps and patterns.",
+          "It merges the three retailers' product feeds into one dataset, then runs a chain of LLM steps for an executive summary, pricing and whitespace analysis, supplier identification and recommendations, assembled into one competitor report.",
         outcome: { url: "https://drive.google.com/file/d/1PYX7B5gxFvyVk6Dv6iP7seMjouJjkxsA/view?usp=sharing" },
         workflow: "/workflows/competitor-analysis-agent.json",
       },
       {
-        title: "Designing the AI Insights & Content Agent",
+        title: "Content strategy agent",
         summary:
-          "I updated and tested the AI Insights & Content Agent to produce on-brand, shopper-focused content and a structured content strategy report.",
+          "Turns the trend and competitor findings into shopper-focused content ideas, social captions and campaigns in Wayfair's voice.",
         details:
-          "The project evaluated the agent, rewrote its prompt and system message, added an executive summary and content-idea structure, and tested the updated workflow. The submission produced a downloadable content strategy report and a walkthrough recording.",
+          "I rewrote the agent's prompt and system message so every recommendation starts from a real homeowner need and ends in a shoppable content idea, added an executive summary and a structured output, and tested the updated workflow end to end.",
         outcome: { url: "https://www.loom.com/share/34c244b52ba747b495122d77e765c7fb" },
         workflow: "/workflows/content-strategy-agent.json",
       },
       {
-        title: "Building the Dashboard Builder Agent",
+        title: "Dashboard builder agent",
         summary:
           "I built an agent that merges the trend and competitor reports into one live category-intelligence dashboard.",
         details:
-          "The workflow takes the market-trend (P2) and competitor-analysis (P3) HTML reports through an upload form, parses out segments, color palettes, risks, price bands, whitespace gaps and supplier data, and fills a dashboard template to produce the Area Rug Category Intelligence Dashboard shown above.",
+          "The workflow takes the market-trend and competitor reports through an upload form, parses out segments, color palettes, risks, price bands, whitespace gaps and supplier data, and fills a dashboard template to produce the Area Rug Category Intelligence Dashboard shown above.",
         workflow: "/workflows/dashboard-builder-agent.json",
       },
     ],
   },
   {
     slug: "data-analyst-portfolio",
-    title: "Data Analyst Portfolio",
+    title: "BI Dashboards in Tableau and Power BI",
     description:
       "Interactive Tableau and Power BI dashboards that turn raw datasets into clear, filterable stories, from airline customer reviews to bike-share rider behavior.",
     tags: ["Tableau", "Power BI", "SQL Analytics"],
     heroImage: "/images/projects/british-airways-tableau.png",
     overview:
-      "A collection of BI dashboards I built to practice end-to-end analysis: cleaning and shaping the data, picking the right KPIs, and designing interactive views that let anyone explore the results on their own. Each one below is live, so you can filter and click through it right here.",
+      "Two interactive dashboards, each built end to end: cleaning and shaping the data, choosing the KPIs that matter, and designing views that let someone without an analytics background find answers on their own. Both are live below, so you can filter and click through them here.",
     dashboards: [
       {
         title: "British Airways Reviews (Tableau)",
@@ -471,7 +471,7 @@ export const projects: Project[] = [
     slug: "vista-trade",
     title: "Vista Trade",
     description:
-      "Frutiger Aero-inspired React web app that helps you track stock prices with a real-time API and build a portfolio. Provides analytics for both stock prices and trading volume",
+      "A React and TypeScript web app for tracking stock prices in real time and building a simulated portfolio, with price and trading-volume analytics behind a Frutiger Aero-inspired interface.",
     tags: ["React", "Typescript"],
     // TIP: save this image into /public/images/projects/ and point to it locally
     heroImage:

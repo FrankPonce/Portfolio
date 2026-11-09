@@ -11,7 +11,7 @@ Personal portfolio of **Frank Ponce**, a data science master's student (Erasmus 
 | **Wayfair · AI Agent Engineering for BI** | Four n8n AI agents (trend discovery, competitor monitoring, content strategy, dashboard builder) with their live workflow canvases, plus the interactive Area Rug category-intelligence dashboard they produce |
 | **Pfizer · AI Document Insights & Data Extraction** | OCR + LLM + RAG prototyping on enterprise PDF documents (in progress) |
 | **CadetX · Competitor Demand Prediction** | NLP and forecasting on job-posting data, built by a four-person data science team (in progress) |
-| **Data Analyst Portfolio** | Embedded Tableau (British Airways reviews) and Power BI (Cyclistic bike-share) dashboards |
+| **BI dashboards** | Embedded Tableau (British Airways reviews) and Power BI (Cyclistic bike-share) dashboards |
 | **Vista Trade** | React + TypeScript stock-tracking app with real-time prices |
 | **Post-Disaster Road Restoration with RL** | Research paper published in *Reliability Engineering & System Safety* (Elsevier) |
 
