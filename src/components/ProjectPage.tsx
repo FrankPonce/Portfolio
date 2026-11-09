@@ -35,7 +35,7 @@ export function ProjectPage({ project: p }: { project: Project }) {
             <div className="flex max-w-[720px] flex-col items-center gap-2">
               {status && <p className="text-center font-pf-display text-base text-pf-heading leading-5">{status}</p>}
               {p.award && (
-                <p className="mb-1 inline-flex items-center gap-2 rounded-pf-pill border border-pf-accent/60 bg-pf-accent/10 px-3 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
+                <p className="mb-1 inline-flex items-center gap-2 pf-angle pf-angle-ring [--pf-angle-stroke:color-mix(in_srgb,crimson_70%,transparent)] bg-pf-accent/10 px-5 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
                   <span aria-hidden="true">🏆</span>
                   {p.award}
                 </p>
@@ -97,7 +97,7 @@ export function ProjectPage({ project: p }: { project: Project }) {
               {p.certificateUrl && (
                 <div className="flex flex-wrap items-center gap-1">
                   <a
-                    className="inline-flex h-[22px] items-center justify-center whitespace-nowrap rounded-pf-pill bg-pf-tag px-2 font-medium font-pf-body text-[11.48px] text-pf-heading leading-[13px] transition-opacity hover:opacity-80"
+                    className="pf-angle inline-flex h-[22px] items-center justify-center whitespace-nowrap bg-pf-tag px-3 font-medium font-pf-body text-[11.48px] text-pf-heading leading-[13px] transition-opacity hover:opacity-80"
                     href={p.certificateUrl}
                     rel="noopener noreferrer"
                     target="_blank"

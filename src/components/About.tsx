@@ -75,14 +75,17 @@ function DetailGroup({
 function TechStack() {
   if (profile.techStack.length === 0) return null;
   return (
-    <div className="flex w-full flex-col gap-4 rounded-pf-lg border border-pf-border p-5">
+    <div className="flex w-full flex-col gap-4">
       <p className="font-pf-display text-pf-text-subtle text-sm leading-4">Tech stack</p>
-      <ul className="grid grid-cols-4 gap-x-2 gap-y-5">
+      <ul className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 lg:grid-cols-3">
         {profile.techStack.map((t) => (
-          <li key={t.name} className="group flex flex-col items-center gap-2 text-center">
+          <li
+            key={t.name}
+            className="pf-chamfer group flex h-[112px] flex-col items-center justify-center gap-2.5 px-1 text-center [--pf-chamfer-stroke:color-mix(in_srgb,crimson_75%,transparent)] transition-colors duration-200 hover:bg-pf-accent/10 hover:[--pf-chamfer-stroke:crimson]"
+          >
             <img
               alt=""
-              className="size-9 object-contain grayscale brightness-150 transition duration-200 group-hover:-translate-y-0.5 group-hover:grayscale-0 group-hover:brightness-100"
+              className="size-9 object-contain grayscale brightness-150 transition duration-200 group-hover:grayscale-0 group-hover:brightness-100"
               src={t.icon}
             />
             <span className="font-pf-body text-[12px] text-pf-text-subtle leading-[14px]">{t.name}</span>
@@ -118,7 +121,7 @@ export function About() {
               <ContactLine icon="github" label="GitHub Profile" href={c.github} />
               <ContactLine icon="mapPin" label={c.location} />
               <a
-                className="inline-flex h-12 items-center justify-center rounded-pf-pill bg-[var(--pf-noir-pill)] px-4 font-normal font-pf-display text-base text-pf-inverse leading-5 transition-colors hover:bg-pf-surface-muted"
+                className="pf-angle inline-flex h-12 items-center justify-center bg-[var(--pf-noir-pill)] px-6 font-normal font-pf-display text-base text-pf-inverse leading-5 transition-colors hover:bg-pf-surface-muted"
                 download
                 href={profile.resumeUrl}
               >

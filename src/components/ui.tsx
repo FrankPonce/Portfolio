@@ -2,20 +2,20 @@ import { SigilDivider } from "./Sigil";
 // Small shared building blocks (class names taken from the original Extern markup).
 
 export const btnBase =
-  "inline-flex items-center justify-center gap-2 rounded-pf-pill font-pf-display font-medium text-pf-inverse transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pf-accent focus-visible:ring-offset-2 focus-visible:ring-offset-pf-canvas";
+  "pf-angle inline-flex items-center justify-center gap-2 font-pf-display font-medium text-pf-inverse transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pf-accent focus-visible:ring-offset-2 focus-visible:ring-offset-pf-canvas";
 export const btnFilled = "bg-[var(--pf-noir-pill)] hover:bg-pf-surface-muted";
-export const btnOutline = "border border-pf-inverse hover:bg-[var(--pf-noir-pill)]";
+export const btnOutline = "pf-angle-ring [--pf-angle-stroke:var(--pf-inverse)] hover:bg-[var(--pf-noir-pill)]";
 export const btnGhost = "hover:bg-[var(--pf-noir-pill)]";
-export const btnLg = "px-6 py-4 text-lg leading-6 tracking-[-0.5px]";
-export const btnMd = "h-12 px-4 py-2 text-base leading-5";
+export const btnLg = "px-8 py-4 text-lg leading-6 tracking-[-0.5px]";
+export const btnMd = "h-12 px-6 py-2 text-base leading-5";
 
 export function Tag({ children, small }: { children: React.ReactNode; small?: boolean }) {
   return (
     <span
       className={
         small
-          ? "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-pf-pill bg-pf-tag text-pf-tag-text h-[22px] px-2 py-1 font-medium font-pf-body text-[11px] leading-[13px]"
-          : "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-pf-pill bg-pf-tag text-pf-tag-text px-2 py-1 font-normal font-pf-display text-[12px] leading-[14px]"
+          ? "inline-flex items-center justify-center gap-1 pf-angle whitespace-nowrap bg-pf-tag text-pf-tag-text h-[22px] px-3 py-1 font-medium font-pf-body text-[11px] leading-[13px]"
+          : "inline-flex items-center justify-center gap-1 pf-angle whitespace-nowrap bg-pf-tag text-pf-tag-text px-3 py-1 font-normal font-pf-display text-[12px] leading-[14px]"
       }
     >
       {children}

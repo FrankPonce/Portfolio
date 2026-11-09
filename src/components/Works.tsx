@@ -66,7 +66,7 @@ function WorkCard({ project: p }: { project: Project }) {
       )}
 
       {p.award && (
-        <p className="relative inline-flex items-center gap-2 rounded-pf-pill border border-pf-accent/60 bg-pf-accent/10 px-3 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
+        <p className="relative inline-flex items-center gap-2 pf-angle pf-angle-ring [--pf-angle-stroke:color-mix(in_srgb,crimson_70%,transparent)] bg-pf-accent/10 px-5 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
           <span aria-hidden="true">🏆</span>
           {p.award}
         </p>

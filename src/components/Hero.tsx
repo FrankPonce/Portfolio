@@ -5,7 +5,7 @@ import { btnBase, btnFilled, btnLg, btnOutline } from "./ui";
 function Badge() {
   if (!profile.badge) return null;
   return (
-    <div className="inline-flex items-center justify-center gap-2 rounded-pf-pill bg-pf-surface-muted py-2 pr-4 pl-2">
+    <div className="pf-angle inline-flex items-center justify-center gap-2 bg-pf-surface-muted px-5 py-2">
       {profile.badge.logo && (
         <span className="flex size-6 shrink-0 items-center justify-center overflow-hidden rounded-full bg-pf-accent">
           <img alt="" className="size-full object-cover" src={profile.badge.logo} />

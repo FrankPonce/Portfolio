@@ -55,7 +55,7 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
 
         <nav
           aria-label="Portfolio sections"
-          className="flex w-fit shrink-0 items-center gap-1 rounded-pf-pill bg-[var(--pf-noir-pill)] p-1"
+          className="pf-angle flex w-fit shrink-0 items-center gap-1 bg-[var(--pf-noir-pill)] px-3 py-1"
         >
           {tabs.map((t) => (
             <Link
@@ -63,7 +63,7 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
               href={`/#${t.id}`}
               data-pf-tab={t.id}
               data-active={active === t.id}
-              className="rounded-pf-pill px-2 py-2 font-normal font-pf-display text-pf-text text-sm leading-5 transition-colors hover:bg-pf-surface-muted lg:px-3 lg:text-base"
+              className="pf-angle px-3 py-2 font-normal font-pf-display text-pf-text text-sm leading-5 transition-colors hover:bg-pf-surface-muted lg:px-5 lg:text-base"
             >
               <span className="lg:hidden">{t.short}</span>
               <span className="hidden lg:inline">{t.long}</span>
