@@ -38,7 +38,7 @@ function DetailGroup({
   icon,
   items,
 }: {
-  label: string;
+  label?: string;
   icon: IconName;
   items: { title: string; subtitle: string; logo?: string; description?: string }[];
 }) {
@@ -46,7 +46,7 @@ function DetailGroup({
   return (
     <div className="flex w-full flex-col gap-6">
       <div className="flex w-full flex-col items-start gap-2">
-        <p className="font-pf-display text-pf-text-subtle text-sm leading-4">{label}</p>
+        {label && <p className="font-pf-display text-pf-text-subtle text-sm leading-4">{label}</p>}
         {items.map((it) => (
           <div key={it.title + it.subtitle} className="flex items-start gap-3 py-2">
             {it.logo ? (
@@ -69,6 +69,25 @@ function DetailGroup({
         ))}
       </div>
       <Divider />
+    </div>
+  );
+}
+
+/** Top-level block heading in the About column (Experience, Volunteering, Education). */
+function BlockHeading({ children }: { children: React.ReactNode }) {
+  return <h3 className="font-pf-heading font-semibold text-[28px] text-pf-heading leading-8 md:text-[32px]">{children}</h3>;
+}
+
+function Skills() {
+  if (profile.skills.length === 0) return null;
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <p className="font-pf-display text-pf-text-subtle text-sm leading-4">Skills</p>
+      <div className="flex flex-wrap gap-2">
+        {profile.skills.map((s) => (
+          <Tag key={s}>{s}</Tag>
+        ))}
+      </div>
     </div>
   );
 }
@@ -143,6 +162,7 @@ export function About() {
               </a>
             </div>
           </aside>
+          <Skills />
           <TechStack />
           </div>
 
@@ -151,11 +171,12 @@ export function About() {
               {profile.bio}
             </p>
             <Divider />
+            <BlockHeading>Experience</BlockHeading>
             <DetailGroup label="Externships" icon="sealCheck" items={profile.externships} />
             <DetailGroup
-              label="Experience"
+              label="Freelancing"
               icon="briefcase"
-              items={profile.experience.map((e) => ({
+              items={profile.experience.filter((e) => e.kind === "freelance").map((e) => ({
                 title: e.title,
                 subtitle: `${e.company} · ${e.dates}`,
                 logo: e.logo,
@@ -163,17 +184,24 @@ export function About() {
               }))}
             />
             <DetailGroup
-              label="Volunteering"
-              icon="sealCheck"
-              items={profile.volunteering.map((e) => ({
+              label="Internships"
+              icon="briefcase"
+              items={profile.experience.filter((e) => e.kind === "internship").map((e) => ({
                 title: e.title,
                 subtitle: `${e.company} · ${e.dates}`,
                 logo: e.logo,
                 description: e.description,
               }))}
             />
+            <BlockHeading>Volunteering</BlockHeading>
+            <DetailGroup icon="sealCheck" items={profile.volunteering.map((e) => ({
+                title: e.title,
+                subtitle: `${e.company} · ${e.dates}`,
+                logo: e.logo,
+                description: e.description,
+              }))} />
+            <BlockHeading>Education</BlockHeading>
             <DetailGroup
-              label="Education"
               icon="graduationCap"
               items={profile.education.map((e) => ({
                 title: e.school,
@@ -182,14 +210,6 @@ export function About() {
                 description: e.description,
               }))}
             />
-            <div className="flex w-full flex-col items-start gap-2">
-              <p className="font-pf-body text-pf-text-subtle text-sm leading-4">Skills</p>
-              <div className="flex flex-wrap gap-2">
-                {profile.skills.map((s) => (
-                  <Tag key={s}>{s}</Tag>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

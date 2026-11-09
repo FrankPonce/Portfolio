@@ -119,19 +119,24 @@ export const profile = {
       title: "Pfizer: AI document intelligence for pharmaceutical PDFs",
       subtitle: "Externship via Extern · In progress",
       logo: "/images/logos/pfizer.png",
+      description:
+        "Prototyping an AI pipeline that turns scanned pharmaceutical vendor documents into structured, searchable data with OCR, LLMs and retrieval-augmented generation.",
     },
     {
       title: "Wayfair: AI agents for category intelligence",
       subtitle: "Externship via Extern · Completed Aug 2026",
       logo: "/images/logos/wayfair.png",
+      description:
+        "Built four n8n AI agents for area-rug trend and competitor intelligence across Amazon, Walmart and Wayfair, feeding a live category-intelligence dashboard.",
     },
-  ] as { title: string; subtitle: string; logo?: string }[],
+  ] as { title: string; subtitle: string; logo?: string; description?: string }[],
 
   /** `logo` is optional; `description` shows under the title. */
   experience: [
     {
       title: "Data Scientist (Virtual Work Experience)",
       company: "CadetX",
+      kind: "internship",
       dates: "In progress",
       logo: "/images/logos/cadetx.png",
       description:
@@ -140,6 +145,7 @@ export const profile = {
     {
       title: "AI Training Specialist",
       company: "Outlier",
+      kind: "freelance",
       dates: "Jun 2026 - Nov 2026",
       logo: "/images/logos/outlier.svg",
       description:
@@ -148,6 +154,7 @@ export const profile = {
     {
       title: "Multimodal Agent Evaluator",
       company: "Invisible Technologies",
+      kind: "freelance",
       dates: "May 2026 - Aug 2026",
       logo: "/images/logos/invisible.png",
       description:
@@ -156,6 +163,7 @@ export const profile = {
     {
       title: "Data Analyst Sprintern",
       company: "StartupFIU",
+      kind: "internship",
       dates: "Jan 2024 - May 2024",
       logo: "/images/logos/startupfiu.png",
       description:
@@ -164,12 +172,21 @@ export const profile = {
     {
       title: "Business Intelligence Intern",
       company: "CDR Companies",
+      kind: "internship",
       dates: "Aug 2023 - Dec 2023",
       logo: "/images/logos/cdr.png",
       description:
         "Developed and tested features on the CDR Health Salesforce platform through Jira tickets, analyzed database objects and visualized them in Tableau, and built a dashboard component that made inserting records into the SQL database simpler.",
     },
-  ] as { title: string; company: string; dates: string; logo?: string; description?: string }[],
+  ] as {
+    title: string;
+    company: string;
+    dates: string;
+    /** Which Experience subsection it appears under. */
+    kind: "freelance" | "internship";
+    logo?: string;
+    description?: string;
+  }[],
 
   volunteering: [
     {
@@ -230,7 +247,20 @@ export const profile = {
     { name: "IntelliJ", icon: "/images/tech/intellij.svg" },
   ] as { name: string; icon: string }[],
 
-  skills: ["AI for Business Strategy", "Data Analysis", "AI Engineering", "Business Intelligence", "Data Science", "Machine Learning"],
+  skills: [
+    "AI for Business Strategy",
+    "Data Analysis",
+    "Machine Learning",
+    "Forecasting",
+    "AI Agents & Automation",
+    "LLM Evaluation",
+    "NLP",
+    "Prompt Engineering",
+    "Business Intelligence",
+    "Data Visualization",
+    "Competitive Intelligence",
+    "Data Storytelling",
+  ],
 };
 
 export const projects: Project[] = [
