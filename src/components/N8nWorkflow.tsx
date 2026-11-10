@@ -100,7 +100,7 @@ export function N8nWorkflow({
         </div>
         <a
           aria-label="Download workflow JSON"
-          className="inline-flex shrink-0 items-center justify-center rounded-full p-1.5 text-pf-text-subtle transition-colors duration-200 hover:bg-pf-tag/50 hover:text-pf-link"
+          className="inline-flex shrink-0 items-center justify-center rounded-full p-1.5 text-pf-text-subtle transition-colors duration-200 hover:bg-pf-accent hover:text-white"
           download
           href={src}
           title="Download workflow JSON"
@@ -109,7 +109,7 @@ export function N8nWorkflow({
         </a>
         {outcome && (
           <a
-            className="pf-angle pf-angle-ring [--pf-angle-stroke:var(--pf-link)] inline-flex shrink-0 items-center gap-1.5 px-4 py-1.5 font-medium font-pf-body text-pf-link text-sm leading-[18px] transition-colors duration-200 hover:bg-pf-tag/50"
+            className="pf-angle pf-angle-ring [--pf-angle-stroke:var(--pf-link)] inline-flex shrink-0 items-center gap-1.5 px-4 py-1.5 font-medium font-pf-body text-pf-link text-sm leading-[18px] transition-colors duration-200 hover:bg-pf-accent hover:text-white hover:[--pf-angle-stroke:crimson]"
             href={outcome.url}
             rel="noopener noreferrer"
             target="_blank"

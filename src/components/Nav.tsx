@@ -63,7 +63,7 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
               href={`/#${t.id}`}
               data-pf-tab={t.id}
               data-active={active === t.id}
-              className="pf-angle px-3 py-2 font-normal font-pf-display text-pf-text text-sm leading-5 transition-colors hover:bg-pf-surface-muted lg:px-5 lg:text-base"
+              className="pf-angle px-3 py-2 font-normal font-pf-display text-pf-text text-sm leading-5 transition-colors hover:bg-pf-accent hover:text-white lg:px-5 lg:text-base"
             >
               <span className="lg:hidden">{t.short}</span>
               <span className="hidden lg:inline">{t.long}</span>

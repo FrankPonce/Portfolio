@@ -97,7 +97,7 @@ export function ProjectPage({ project: p }: { project: Project }) {
               {p.certificateUrl && (
                 <div className="flex flex-wrap items-center gap-1">
                   <a
-                    className="pf-angle inline-flex h-[22px] items-center justify-center whitespace-nowrap bg-pf-tag px-3 font-medium font-pf-body text-[11.48px] text-pf-heading leading-[13px] transition-opacity hover:opacity-80"
+                    className="pf-angle inline-flex h-[22px] items-center justify-center whitespace-nowrap bg-pf-tag px-3 font-medium font-pf-body text-[11.48px] text-pf-heading leading-[13px] transition-colors hover:bg-pf-accent hover:text-white"
                     href={p.certificateUrl}
                     rel="noopener noreferrer"
                     target="_blank"

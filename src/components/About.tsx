@@ -151,7 +151,7 @@ export function About() {
               <ContactLine icon="github" label="GitHub Profile" href={c.github} />
               <ContactLine icon="mapPin" label={c.location} />
               <a
-                className="pf-angle inline-flex h-12 items-center justify-center bg-[var(--pf-noir-pill)] px-6 font-normal font-pf-display text-base text-pf-inverse leading-5 transition-colors hover:bg-pf-surface-muted"
+                className="pf-angle inline-flex h-12 items-center justify-center bg-[var(--pf-noir-pill)] px-6 font-normal font-pf-display text-base text-pf-inverse leading-5 transition-colors hover:bg-pf-accent hover:text-white"
                 download
                 href={profile.resumeUrl}
               >
