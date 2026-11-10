@@ -25,6 +25,8 @@ function WorkCard({ project: p }: { project: Project }) {
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <img
             alt=""
+            decoding="async"
+            loading="lazy"
             className="absolute inset-0 size-full object-cover opacity-25 transition-transform duration-300 group-hover:scale-[1.02] md:opacity-60"
             src={p.cardImage ?? p.heroImage}
           />

@@ -1,6 +1,7 @@
 import type { Outcome } from "@/data/portfolio";
 import { describeOutcome } from "@/lib/outcome";
 import { Icon } from "./Icons";
+import { LazyFrame } from "./Loading";
 import { ScaledFrame } from "./ScaledFrame";
 
 /** Embedded preview of a deliverable (Google Doc/Slides/Drive, Loom) + "Access" button. */
@@ -16,7 +17,7 @@ export function OutcomeCard({ outcome, title, rounded = "rounded-pf-lg" }: { out
           rel="noopener noreferrer"
           target="_blank"
         >
-          <img alt={label} className="h-full w-auto object-contain shadow-lg" src={outcome.image} />
+          <img alt={label} className="h-full w-auto object-contain shadow-lg" decoding="async" loading="lazy" src={outcome.image} />
         </a>
       )}
       {embedUrl && (
@@ -28,15 +29,7 @@ export function OutcomeCard({ outcome, title, rounded = "rounded-pf-lg" }: { out
           {outcome.embed && outcome.wide ? (
             <ScaledFrame src={embedUrl} title={`${title} preview`} />
           ) : (
-            <iframe
-              allow="fullscreen"
-              allowFullScreen
-              className="absolute inset-0 size-full border-0"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              src={embedUrl}
-              title={`${title} preview`}
-            />
+            <LazyFrame label="Loading preview" src={embedUrl} title={`${title} preview`} />
           )}
         </div>
       )}

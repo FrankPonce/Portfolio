@@ -50,7 +50,7 @@ function DetailGroup({
         {items.map((it) => (
           <div key={it.title + it.subtitle} className="flex items-start gap-3 py-2">
             {it.logo ? (
-              <img alt="" className="size-10 shrink-0 object-contain" src={it.logo} />
+              <img alt="" decoding="async" loading="lazy" className="size-10 shrink-0 object-contain" src={it.logo} />
             ) : (
               <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-pf-surface-muted text-pf-text">
                 <Icon name={icon} className="size-5" />
@@ -115,7 +115,7 @@ function TechStack() {
                   <path d={d} fillRule="evenodd" vectorEffect="non-scaling-stroke" />
                 </svg>
               ) : (
-                <img alt="" className="size-11 object-contain" src={t.icon} />
+                <img alt="" decoding="async" loading="lazy" className="size-11 object-contain" src={t.icon} />
               )}
               <span className="font-pf-body text-[12px] text-pf-text-subtle leading-[14px]">{t.name}</span>
             </li>
@@ -141,7 +141,7 @@ export function About() {
           <div className="contents lg:flex lg:w-full lg:max-w-[427px] lg:shrink-0 lg:flex-col lg:gap-6">
           <aside className="relative order-1 flex w-full max-w-[427px] flex-col lg:order-none lg:max-w-none gap-6 overflow-hidden rounded-pf-lg bg-pf-surface">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-              <img alt="" className="absolute inset-0 size-full object-cover" src={profile.profilePicture} />
+              <img alt="" decoding="async" loading="lazy" className="absolute inset-0 size-full object-cover" src={profile.profilePicture} />
               <div className="absolute inset-0 bg-[image:var(--pf-hero-gradient)]" />
             </div>
             <span className="sr-only">{profile.name} portrait</span>

@@ -52,7 +52,7 @@ function Item({ item, index, defaultOpen, centered }: { item: BreakdownItem; ind
               item.image && (
                 <div className="flex w-full flex-col overflow-hidden rounded-pf-md border border-pf-border">
                   <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-pf-surface-muted">
-                    <img alt="" className="absolute inset-0 size-full object-cover" src={item.image} />
+                    <img alt="" decoding="async" loading="lazy" className="absolute inset-0 size-full object-cover" src={item.image} />
                   </div>
                 </div>
               )

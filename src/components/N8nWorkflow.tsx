@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Outcome } from "@/data/portfolio";
 import { Icon } from "./Icons";
+import { LoadingShape, useNearViewport } from "./Loading";
 
 /** n8n's official read-only workflow viewer (a web component that draws the canvas in an iframe). */
 const N8N_DEMO_SRC = "https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component@1.0.20/n8n-demo.bundled.js";
@@ -52,8 +53,32 @@ export function N8nWorkflow({
 }) {
   const [workflow, setWorkflow] = useState<string>();
   const [failed, setFailed] = useState(false);
+  const [ref, near] = useNearViewport<HTMLDivElement>();
+  const [drawn, setDrawn] = useState(false);
+  const viewer = useRef<HTMLElement>(null);
 
+  // Keep the loading shape up until the viewer's own iframe has painted the canvas (8 s fallback).
   useEffect(() => {
+    if (!workflow) return;
+    let alive = true;
+    const finish = () => alive && setDrawn(true);
+    const fallback = setTimeout(finish, 8000);
+    const poll = setInterval(() => {
+      const frame = viewer.current?.shadowRoot?.querySelector("iframe");
+      if (!frame) return;
+      clearInterval(poll);
+      frame.addEventListener("load", () => setTimeout(finish, 400), { once: true });
+    }, 100);
+    return () => {
+      alive = false;
+      clearTimeout(fallback);
+      clearInterval(poll);
+    };
+  }, [workflow]);
+
+  // The viewer script (~1 MB) and the workflow JSON are only fetched once the embed is near the screen.
+  useEffect(() => {
+    if (!near) return;
     let alive = true;
     Promise.all([loadViewer(), fetch(src).then((r) => (r.ok ? r.text() : Promise.reject(r.status)))])
       .then(([, json]) => alive && setWorkflow(json))
@@ -61,13 +86,14 @@ export function N8nWorkflow({
     return () => {
       alive = false;
     };
-  }, [src]);
+  }, [src, near]);
 
   return (
     <div className={`flex w-full flex-col overflow-hidden ${rounded} border border-pf-border`}>
-      <div className="relative min-h-[440px] w-full bg-pf-surface-muted">
-        {workflow ? (
+      <div ref={ref} className="relative min-h-[440px] w-full bg-pf-surface-muted">
+        {workflow && (
           <n8n-demo
+            ref={viewer}
             aria-label={`${title} n8n workflow`}
             className="block w-full"
             style={
@@ -83,10 +109,13 @@ export function N8nWorkflow({
             theme="dark"
             workflow={workflow}
           />
-        ) : (
+        )}
+        {failed ? (
           <p className="absolute inset-0 flex items-center justify-center font-pf-body text-pf-text-subtle text-sm">
-            {failed ? "Couldn't load the workflow preview." : "Loading workflow…"}
+            Couldn't load the workflow preview.
           </p>
+        ) : (
+          <LoadingShape done={drawn} label="Loading workflow" />
         )}
       </div>
       <div className="flex h-16 w-full items-center gap-3 border-pf-border border-t bg-pf-surface px-4 py-3">
