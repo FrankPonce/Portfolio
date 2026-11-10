@@ -105,7 +105,7 @@ function TechStack() {
               {d ? (
                 <svg
                   aria-hidden="true"
-                  className="size-11 overflow-visible text-pf-accent transition-[filter] duration-200 group-hover:drop-shadow-[0_0_6px_crimson]"
+                  className="size-11 overflow-visible text-pf-accent transition-[filter] duration-200 group-hover:drop-shadow-[0_0_6px_var(--pf-link)]"
                   fill="none"
                   stroke="currentColor"
                   strokeLinejoin="round"

@@ -6,7 +6,7 @@ const signed = (v: number, d: number) => `${v > 0 ? "+" : v < 0 ? "−" : "±"}$
 /**
  * Paired bars per metric, both drawn to scale against the larger of the two values, so the gap between
  * the bar ends is the difference. Each row says whether lower or higher is better; the change label is
- * crimson when the model wins and muted grey when it doesn't, so an honest "no edge" result reads as one.
+ * red when the model wins and muted grey when it doesn't, so an honest "no edge" result reads as one.
  */
 export function ResultsChart({ results: r }: { results: Results }) {
   return (
@@ -63,7 +63,7 @@ export function ResultsChart({ results: r }: { results: Results }) {
 
               <dd
                 aria-hidden="true"
-                className={`font-pf-display font-semibold text-xl tabular-nums md:text-right ${wins ? "text-pf-accent" : "text-pf-text-muted"}`}
+                className={`font-pf-display font-semibold text-xl tabular-nums md:text-right ${wins ? "text-pf-link" : "text-pf-text-muted"}`}
               >
                 {change}
               </dd>

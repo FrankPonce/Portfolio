@@ -2,7 +2,7 @@ import Link from "next/link";
 import { profile } from "@/data/portfolio";
 
 const link =
-  "max-w-full font-medium font-pf-body text-base text-pf-text leading-5 underline-offset-4 transition-colors hover:text-pf-accent hover:underline";
+  "max-w-full font-medium font-pf-body text-base text-pf-text leading-5 underline-offset-4 transition-colors hover:text-pf-link hover:underline";
 const label = "font-pf-body text-pf-text-subtle text-sm leading-4";
 const col = "wrap-break-word flex min-w-0 flex-1 flex-col items-start gap-2";
 const vr = <div aria-hidden="true" className="h-px w-full shrink-0 bg-pf-divider md:h-auto md:w-px md:self-stretch" />;

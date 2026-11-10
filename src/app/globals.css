@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Design tokens extracted from the original Extern "noir" theme (crimson accent).
+ * Design tokens for the "noir" theme: black, white and blood red (#910011).
  * Change the values in [data-pf-theme="noir"] below to re-theme the whole site.
  * Tailwind utilities like bg-pf-surface, text-pf-heading, rounded-pf-lg map to them.
  */
@@ -15,10 +15,10 @@
   --color-pf-text-subtle: var(--pf-text-subtle);
   --color-pf-text-muted: var(--pf-text-muted);
   --color-pf-heading: var(--pf-heading);
-  --color-pf-accent: crimson;
+  --color-pf-accent: var(--pf-accent);
   --color-pf-on-accent: var(--pf-on-accent);
   --color-pf-link: var(--pf-link);
-  --color-pf-highlight: crimson;
+  --color-pf-highlight: var(--pf-highlight);
   --color-pf-on-highlight: var(--pf-on-highlight);
   --color-pf-tag: var(--pf-tag);
   --color-pf-tag-text: var(--pf-tag-text);
@@ -46,10 +46,11 @@
   --pf-text-subtle: #e5e2e1;
   --pf-text-muted: #adaaaa;
   --pf-heading: #ffffff;
-  --pf-accent: crimson;
+  /* blood red for fills, outlines and graphics; a lighter tint of it for small red text (readable on black) */
+  --pf-accent: #910011;
   --pf-on-accent: #1c1b1b;
-  --pf-link: crimson;
-  --pf-highlight: crimson;
+  --pf-link: #e8475a;
+  --pf-highlight: #910011;
   --pf-on-highlight: #1c1b1b;
   --pf-tag: rgba(255, 255, 255, 0.1);
   --pf-tag-text: #fdf8f8;
@@ -91,7 +92,7 @@ body {
 
 /* Active tab in the top nav pill */
 [data-pf-tab][data-active="true"] {
-  background-color: crimson;
+  background-color: var(--pf-accent);
   color: var(--pf-inverse);
   font-weight: 500;
 }

@@ -73,7 +73,7 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
 
         <div className="hidden min-w-0 items-center gap-6 lg:flex lg:w-[358px] lg:justify-end">
           <a
-            className="min-w-0 truncate font-normal font-pf-body text-base text-pf-text leading-5 underline decoration-solid underline-offset-2 transition-all hover:text-pf-accent hover:opacity-70"
+            className="min-w-0 truncate font-normal font-pf-body text-base text-pf-text leading-5 underline decoration-solid underline-offset-2 transition-all hover:text-pf-link hover:opacity-70"
             href={`mailto:${profile.contact.email}`}
           >
             {profile.contact.email}
@@ -81,7 +81,7 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
           <div className="flex shrink-0 items-center gap-6">
             <a
               aria-label="LinkedIn"
-              className="flex size-6 shrink-0 items-center justify-center text-pf-text transition-all hover:text-pf-accent hover:opacity-70"
+              className="flex size-6 shrink-0 items-center justify-center text-pf-text transition-all hover:text-pf-link hover:opacity-70"
               href={profile.contact.linkedin}
               rel="noopener noreferrer"
               target="_blank"
@@ -90,7 +90,7 @@ export function Nav({ fixedActive }: { fixedActive?: Tab }) {
             </a>
             <a
               aria-label="GitHub"
-              className="flex size-6 shrink-0 items-center justify-center text-pf-text transition-all hover:text-pf-accent hover:opacity-70"
+              className="flex size-6 shrink-0 items-center justify-center text-pf-text transition-all hover:text-pf-link hover:opacity-70"
               href={profile.contact.github}
               rel="noopener noreferrer"
               target="_blank"

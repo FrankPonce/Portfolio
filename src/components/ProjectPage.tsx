@@ -35,7 +35,7 @@ export function ProjectPage({ project: p }: { project: Project }) {
             <div className="flex max-w-[720px] flex-col items-center gap-2">
               {status && <p className="text-center font-pf-display text-base text-pf-heading leading-5">{status}</p>}
               {p.award && (
-                <p className="mb-1 inline-flex items-center gap-2 pf-angle pf-angle-ring [--pf-angle-stroke:color-mix(in_srgb,crimson_70%,transparent)] bg-pf-accent/10 px-5 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
+                <p className="mb-1 inline-flex items-center gap-2 pf-angle pf-angle-ring [--pf-angle-stroke:var(--pf-accent)] bg-pf-accent/10 px-5 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
                   <span aria-hidden="true">🏆</span>
                   {p.award}
                 </p>

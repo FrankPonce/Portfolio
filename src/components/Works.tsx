@@ -66,7 +66,7 @@ function WorkCard({ project: p }: { project: Project }) {
       )}
 
       {p.award && (
-        <p className="relative inline-flex items-center gap-2 pf-angle pf-angle-ring [--pf-angle-stroke:color-mix(in_srgb,crimson_70%,transparent)] bg-pf-accent/10 px-5 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
+        <p className="relative inline-flex items-center gap-2 pf-angle pf-angle-ring [--pf-angle-stroke:var(--pf-accent)] bg-pf-accent/10 px-5 py-1 font-medium font-pf-display text-pf-heading text-sm leading-5">
           <span aria-hidden="true">🏆</span>
           {p.award}
         </p>
@@ -90,7 +90,7 @@ function WorkCard({ project: p }: { project: Project }) {
       {/* "there's more inside" cue */}
       <span
         aria-hidden="true"
-        className="pf-angle pf-angle-ring pointer-events-none absolute right-4 bottom-4 flex h-10 w-14 items-center justify-center bg-pf-surface/70 text-pf-text-subtle backdrop-blur-sm transition-all duration-200 [--pf-angle-stroke:var(--pf-text-muted)] [--pf-angle-tip:14px] group-hover:translate-x-1 group-hover:bg-pf-accent group-hover:text-white group-hover:[--pf-angle-stroke:crimson] md:right-6 md:bottom-6"
+        className="pf-angle pf-angle-ring pointer-events-none absolute right-4 bottom-4 flex h-10 w-14 items-center justify-center bg-pf-surface/70 text-pf-text-subtle backdrop-blur-sm transition-all duration-200 [--pf-angle-stroke:var(--pf-text-muted)] [--pf-angle-tip:14px] group-hover:translate-x-1 group-hover:bg-pf-accent group-hover:text-white group-hover:[--pf-angle-stroke:var(--pf-accent)] md:right-6 md:bottom-6"
       >
         <Icon name="caretRight" className="size-5" />
       </span>
