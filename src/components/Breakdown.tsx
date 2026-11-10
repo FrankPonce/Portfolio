@@ -72,7 +72,7 @@ export function Breakdown({ items }: { items: BreakdownItem[] }) {
           key={item.title}
           item={item}
           index={i}
-          defaultOpen={items.length === 1}
+          defaultOpen
           centered={items.length % 2 === 1 && i === items.length - 1}
         />
       ))}
