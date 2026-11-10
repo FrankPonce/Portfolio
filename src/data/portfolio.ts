@@ -69,8 +69,17 @@ export type Results = {
   note?: string;
   baselineLabel: string;
   modelLabel: string;
-  /** Lower is better for every row. */
-  rows: { metric: string; detail?: string; baseline: number; model: number; decimals?: number }[];
+  rows: {
+    metric: string;
+    detail?: string;
+    baseline: number;
+    model: number;
+    decimals?: number;
+    /** Default "lower" (errors, losses). Use "higher" for accuracy-style metrics. */
+    better?: "lower" | "higher";
+    /** Default "relative" (% change); "points" shows the raw difference, e.g. accuracy in percentage points. */
+    changeAs?: "relative" | "points";
+  }[];
 };
 
 export type Dashboard = {
@@ -339,6 +348,62 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "vista-trade",
+    title: "VistaTrade: Paper Trading and Learning Platform",
+    description:
+      "A free platform for learning to invest by doing: trade real US stocks at live prices with $10,000 of virtual money, take an 8-lesson beginner course, and see what a machine-learning forecast can (and mostly can't) predict.",
+    date: "Nov 2026",
+    tags: ["Next.js", "TypeScript", "Python", "LightGBM", "Fintech", "Product Design"],
+    heroImage: "/images/projects/vistatrade-dashboard.jpg",
+    overview:
+      "Beginners either learn with real money or with toy simulators that teach nothing about how markets actually behave. VistaTrade is a realistic, free sandbox in between: live prices, honest trading mechanics, and a course where every concept comes with something to try in your own paper account.\n\nI first built it in early 2025 to teach myself React and working with live APIs, and rebuilt it from the ground up as a full platform: a tested trading engine, a learning hub, and a forecasting model that is always shown next to simple baselines, to show how little short-term prices can be predicted.",
+    accomplishment:
+      "VistaTrade is live and free to use. It has market and limit orders with a tested trading engine, 20 popular stocks plus search across every US-listed stock, 8 lessons with quizzes and hands-on tasks, 10 achievements, and daily 1-day and 5-day forecasts with an 80 % range, refreshed every weekday by a scheduled pipeline. API keys stay on the server, and the app falls back to a clearly labelled simulated market when no data keys are set.",
+    featuredOutcome: { url: "https://vista-trade.vercel.app", label: "Live app", wide: true, embed: true },
+    results: {
+      headline: "The forecasting result: no edge over simple baselines",
+      note: "38,453 out-of-sample forecasts per horizon across 20 US stocks and ETFs, March 2019 to November 2026, from a 31-fold walk-forward backtest with an embargo against leakage. On synthetic random-walk prices the model also fails to beat the baselines, which confirms nothing is leaking. Direction is compared with \"always up\", error with \"no change\".",
+      baselineLabel: "Simple baseline",
+      modelLabel: "LightGBM model",
+      rows: [
+        { metric: "Next-day direction", detail: "accuracy %, higher is better", baseline: 52.7, model: 52.2, better: "higher", changeAs: "points" },
+        { metric: "5-day direction", detail: "accuracy %, higher is better", baseline: 55.4, model: 53.9, better: "higher", changeAs: "points" },
+        { metric: "Next-day error", detail: "MAE of daily return, %", baseline: 1.4, model: 1.41, decimals: 2 },
+        { metric: "5-day error", detail: "MAE of 5-day return, %", baseline: 3.23, model: 3.25, decimals: 2 },
+      ],
+    },
+    breakdown: [
+      {
+        title: "Paper trading that behaves like the real thing",
+        summary: "Market and limit orders, open orders that reserve cash or shares, positions, P&L and portfolio history.",
+        details:
+          "The trading rules are pure functions that take an account and return a new one, covered by tests for fills, limits, reservations and profit and loss. Prices come from Alpaca's free IEX feed through server-side routes, polled for every symbol in one request and cached at the edge so visitors share upstream calls. Each stock page has a live chart with volume, key stats, news and the model's forecast.",
+        image: "/images/projects/vistatrade-stock.jpg",
+      },
+      {
+        title: "A course you learn by doing",
+        summary: "Eight five-minute lessons from \"what is a stock?\" to \"what can a model predict?\", each with a quiz and a hands-on task.",
+        details:
+          "Every lesson ends with a task checked against your own paper account, like placing a limit order, holding three sectors at once or keeping each position under 40 % of the portfolio. Progress unlocks achievements, and claims that need fact-checking are tracked in a content review file.",
+        image: "/images/projects/vistatrade-learn.jpg",
+      },
+      {
+        title: "An honest forecasting experiment",
+        summary: "A LightGBM model forecasting 1-day and 5-day returns with an 80 % range, always shown next to baselines and its own backtest.",
+        details:
+          "Features use only what is known at each day's close: recent returns, volatility, volume, RSI, distance from moving averages and the market's own move. One model per horizon predicts the 10th, 50th and 90th percentiles, retrained every quarter in a walk-forward backtest. It doesn't beat \"always up\" or \"no change\", and the app says so, because that's the most useful lesson a beginner can take from it.",
+        image: "/images/projects/vistatrade-forecasts.jpg",
+      },
+      {
+        title: "Built to run for free",
+        summary: "Next.js 15 on Vercel, a nightly GitHub Actions pipeline for forecasts, and no API keys in the browser.",
+        details:
+          "A Python pipeline fetches daily history, retrains and publishes forecasts as a JSON file after every US market close. All data-provider calls run server-side, and without keys the app switches to a deterministic simulated market that every page clearly labels.",
+        outcome: { url: "https://github.com/FrankPonce/VistaTrade", label: "GitHub repository" },
+      },
+    ],
+  },
+  {
     slug: "pfizer-advanced-ai-powered-document-insights-data-extraction-externship",
     title: "Pfizer: AI Document Intelligence for Pharmaceutical PDFs",
     description:
@@ -517,16 +582,6 @@ export const projects: Project[] = [
         },
       },
     ],
-  },
-  {
-    slug: "vista-trade",
-    title: "Vista Trade",
-    description:
-      "A React and TypeScript web app for tracking stock prices in real time and building a simulated portfolio, with price and trading-volume analytics behind a Frutiger Aero-inspired interface.",
-    tags: ["React", "Typescript"],
-    // TIP: save this image into /public/images/projects/ and point to it locally
-    heroImage:
-      "https://portfolio-assets.extern.com/portfolios/frank-ponce/assets/project_image_b1261b31-aaee-442e-978d-190cf001652c.jpg",
   },
   {
     slug: "optimizing-post-disaster-road-restoration-with-reinforcement-learning-a-traveler-behavior-aware-approach",
