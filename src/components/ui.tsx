@@ -3,9 +3,9 @@ import { SigilDivider } from "./Sigil";
 
 export const btnBase =
   "pf-angle inline-flex items-center justify-center gap-2 font-pf-display font-medium text-pf-inverse transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pf-accent focus-visible:ring-offset-2 focus-visible:ring-offset-pf-canvas";
-export const btnFilled = "bg-[var(--pf-noir-pill)] hover:bg-pf-accent hover:text-white";
-export const btnOutline = "pf-angle-ring [--pf-angle-stroke:var(--pf-inverse)] hover:bg-pf-accent hover:text-white hover:[--pf-angle-stroke:var(--pf-accent)]";
-export const btnGhost = "hover:bg-pf-accent hover:text-white";
+export const btnFilled = "pf-angle-ring [--pf-angle-stroke:transparent] bg-[var(--pf-noir-pill)] hover:text-pf-link hover:[--pf-angle-stroke:var(--pf-link)] hover:[text-shadow:0_0_10px_color-mix(in_srgb,var(--pf-link)_75%,transparent)]";
+export const btnOutline = "pf-angle-ring [--pf-angle-stroke:var(--pf-inverse)] hover:text-pf-link hover:[--pf-angle-stroke:var(--pf-link)] hover:[text-shadow:0_0_10px_color-mix(in_srgb,var(--pf-link)_75%,transparent)]";
+export const btnGhost = "pf-angle-ring [--pf-angle-stroke:transparent] hover:text-pf-link hover:[--pf-angle-stroke:var(--pf-link)] hover:[text-shadow:0_0_10px_color-mix(in_srgb,var(--pf-link)_75%,transparent)]";
 export const btnLg = "px-8 py-4 text-lg leading-6 tracking-[-0.5px]";
 export const btnMd = "h-12 px-6 py-2 text-base leading-5";
 

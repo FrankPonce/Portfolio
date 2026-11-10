@@ -52,7 +52,7 @@ export function OutcomeCard({ outcome, title, rounded = "rounded-pf-lg" }: { out
           <span className="min-w-0 flex-1 truncate font-medium font-pf-body text-pf-heading text-sm leading-4">{label}</span>
         </div>
         <a
-          className="pf-angle pf-angle-ring [--pf-angle-stroke:var(--pf-link)] inline-flex shrink-0 items-center gap-1.5 font-medium font-pf-body text-pf-link transition-colors duration-200 hover:bg-pf-accent hover:text-white hover:[--pf-angle-stroke:var(--pf-accent)] px-4 py-1.5 text-sm leading-[18px]"
+          className="pf-angle pf-angle-ring [--pf-angle-stroke:var(--pf-link)] inline-flex shrink-0 items-center gap-1.5 font-medium font-pf-body text-pf-link transition-colors duration-200 hover:[text-shadow:0_0_10px_color-mix(in_srgb,var(--pf-link)_75%,transparent)] px-4 py-1.5 text-sm leading-[18px]"
           href={outcome.url}
           rel="noopener noreferrer"
           target="_blank"
