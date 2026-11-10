@@ -15,7 +15,21 @@ export function generateStaticParams(): Params[] {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const p = projects.find((x) => x.slug === slug);
-  return p ? { title: `${p.title} | ${profile.name}`, description: p.description } : {};
+  return p
+    ? {
+        title: `${p.title} | ${profile.name}`,
+        description: p.description,
+        openGraph: {
+          type: "article",
+          url: `/work/${p.slug}/`,
+          siteName: profile.name,
+          title: p.title,
+          description: p.description,
+          images: [{ url: "/og.png", width: 1200, height: 630 }],
+        },
+        twitter: { card: "summary_large_image", title: p.title, description: p.description, images: ["/og.png"] },
+      }
+    : {};
 }
 
 export default async function WorkPage({ params }: { params: Promise<Params> }) {

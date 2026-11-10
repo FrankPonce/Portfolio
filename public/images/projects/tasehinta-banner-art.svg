@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" viewBox="500 0 700 300" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="t d">
+  <title id="t">Tasehinta</title>
+  <desc id="d">Finnish imbalance price forecast, 10 hours ahead, every 15 minutes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06121c"/>
+      <stop offset="1" stop-color="#0a1f24"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#12303a" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06121c" stop-opacity="1"/>
+      <stop offset="0.55" stop-color="#06121c" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#06121c" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E7F7A" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0E7F7A" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#grid)" opacity="0.8"/>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="16" fill="none" stroke="#0E7F7A" stroke-opacity="0.4"/>
+
+  <!-- forecast window -->
+  <rect x="940" y="40" width="210" height="230" fill="url(#band)"/>
+  <path d="M940 40 V270" stroke="#3fb9b2" stroke-width="1.5" stroke-dasharray="5 6"/>
+
+  <!-- spot price: calm -->
+  <path d="M640 196 C700 192, 740 200, 790 194 S880 186, 930 190 S1040 184, 1150 182" fill="none" stroke="#5b8fc7" stroke-width="3" stroke-linecap="round"/>
+  <!-- imbalance price: breaks away -->
+  <path d="M640 206 C690 200, 720 214, 760 200 S820 214, 860 196 S910 204, 940 176 L975 92 L1000 150 L1030 118 L1060 160 L1100 136 L1150 146" fill="none" stroke="#e0603c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="975" cy="92" r="7" fill="#CF4A2A" stroke="#06121c" stroke-width="3"/>
+  <g transform="translate(990 58)" font-family="'Segoe UI', Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    <rect width="96" height="26" rx="13" fill="#2a0f0a" stroke="#CF4A2A"/>
+    <text x="48" y="17.5" fill="#ffb7a3" text-anchor="middle">RISK ALERT</text>
+  </g>
+
+
+</svg>

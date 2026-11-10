@@ -121,6 +121,21 @@ export function ProjectPage({ project: p }: { project: Project }) {
         </section>
       )}
 
+      {/* Method figure */}
+      {p.figure && (
+        <section className={sectionCls}>
+          <figure className="mx-auto flex w-full max-w-[1280px] flex-col gap-6">
+            <h2 className={h2}>{p.figure.title}</h2>
+            <div className="w-full overflow-x-auto rounded-pf-md border border-pf-border">
+              <img alt={p.figure.alt} className="block h-auto w-full min-w-[640px]" src={p.figure.src} />
+            </div>
+            {p.figure.caption && (
+              <figcaption className="max-w-[68ch] font-pf-body text-pf-text-subtle text-sm leading-5">{p.figure.caption}</figcaption>
+            )}
+          </figure>
+        </section>
+      )}
+
       {/* Dashboards */}
       {p.dashboards && p.dashboards.length > 0 && (
         <section className={sectionCls}>

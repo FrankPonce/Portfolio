@@ -47,6 +47,10 @@ export type Project = {
   award?: string;
   tags: string[];
   heroImage?: string;
+  /** Card background on the home page, when the hero has text that would clash with the card's. */
+  cardImage?: string;
+  /** Full-width diagram shown under the results, e.g. a method flowchart. */
+  figure?: { src: string; alt: string; title: string; caption?: string };
   /** Overview text on the project page (falls back to description). */
   overview?: string;
   /** "What I've accomplished" text. */
@@ -282,7 +286,8 @@ export const projects: Project[] = [
     date: "Nov 2026",
     award: "Winner of the Turku Energia challenge · Top 5 finalist overall",
     tags: ["Machine Learning", "Forecasting", "Decision Support", "Energy Markets", "Business Strategy", "Teamwork"],
-    heroImage: "/images/projects/tasehinta-dashboard.jpg",
+    heroImage: "/images/projects/tasehinta-banner.svg",
+    cardImage: "/images/projects/tasehinta-banner-art.svg",
     overview:
       "When a Turku Energia trader's position misses its plan, the difference is settled at the imbalance price. It's set every 15 minutes and can jump hundreds of euros per MWh away from the day-ahead price when the Finnish grid runs short or into surplus. Turku Energia's brief: poor visibility into upcoming prices raises imbalance costs, so help experts spot significant situations earlier and act in time.\n\nOur team of five turned that into a decision-support tool in one weekend. Every hour it forecasts the next 40 quarter-hours: the expected price with an honest 80 % range, which way the grid will be balanced, and the chance of a price spike. A dashboard then shows only what deserves attention, explains the drivers in plain language, and says what to check, never what to trade, so the trader stays in charge.",
     accomplishment:
@@ -354,7 +359,8 @@ export const projects: Project[] = [
       "A free platform for learning to invest by doing: trade real US stocks at live prices with $10,000 of virtual money, take an 8-lesson beginner course, and see what a machine-learning forecast can (and mostly can't) predict.",
     date: "Nov 2026",
     tags: ["Next.js", "TypeScript", "Python", "LightGBM", "Fintech", "Product Design"],
-    heroImage: "/images/projects/vistatrade-dashboard.jpg",
+    heroImage: "/images/projects/vistatrade-banner.svg",
+    cardImage: "/images/projects/vistatrade-banner-art.svg",
     overview:
       "Beginners either learn with real money or with toy simulators that teach nothing about how markets actually behave. VistaTrade is a realistic, free sandbox in between: live prices, honest trading mechanics, and a course where every concept comes with something to try in your own paper account.\n\nI first built it in early 2025 to teach myself React and working with live APIs, and rebuilt it from the ground up as a full platform: a tested trading engine, a learning hub, and a forecasting model that is always shown next to simple baselines, to show how little short-term prices can be predicted.",
     accomplishment:
@@ -436,7 +442,8 @@ export const projects: Project[] = [
     company: { name: "CadetX", logo: "/images/logos/cadetx.png" },
     inProgress: true,
     tags: ["NLP", "Forecasting", "Python", "Competitive Intelligence", "Data Ethics"],
-    heroImage: "/images/projects/cadetx.jpg",
+    heroImage: "/images/projects/cadetx-banner.svg",
+    cardImage: "/images/projects/cadetx-banner-art.svg",
     overview:
       "Job postings show what a company plans to do before it shows up in earnings reports or product launches. In this 12-sprint CadetX project I'm building an end-to-end hiring-intelligence pipeline for four frontier AI companies: collect postings every week, clean them with NLP, extract skills, track hiring velocity, forecast demand and compare the companies, ending in decision-ready insights for strategy, talent and product teams.\n\nI'm running it solo, rotating through the Scrum Lead, Data Quality, Documentation and Tech Lead roles each sprint, with every decision, dataset and weekly note kept in a public GitHub repository.",
     accomplishment:
@@ -587,19 +594,53 @@ export const projects: Project[] = [
     slug: "optimizing-post-disaster-road-restoration-with-reinforcement-learning-a-traveler-behavior-aware-approach",
     title:
       "Optimizing Post-Disaster Road Restoration with Reinforcement Learning: A Traveler-Behavior-Aware Approach",
-    description: "Research paper published in Reliability Engineering & System Safety (Elsevier).",
+    description:
+      "Reinforcement learning that decides which roads to repair first after a disaster. Published in Reliability Engineering & System Safety (Elsevier).",
     company: { name: "Honors College @ Florida International University" },
     date: "Dec 2025",
-    tags: ["Machine Learning", "Data Science", "Written Communication"],
+    tags: ["Reinforcement Learning", "Machine Learning", "Research", "Written Communication"],
+    overview:
+      "When a tornado or flood blocks roads, crews can only repair a few at a time, nobody knows exactly how long each repair will take, and every road that reopens changes how people drive. The usual goal, finishing the repairs as fast as possible, ignores that last part.\n\nThis paper builds TARM (Traveler-Adaptive Restoration Mechanism): a reinforcement learning agent that decides which damaged roads to restore next, trained inside a day-to-day traffic simulation where travelers adapt their routes gradually. We tested it on the Sioux Falls road network under tornado scenarios based on historical data.",
     accomplishment:
-      "My research on using reinforcement learning to plan post-disaster road restoration, accounting for how travelers actually behave, was published in Reliability Engineering & System Safety, an Elsevier journal.",
+      "Published in Reliability Engineering & System Safety (Elsevier), co-authored with Maryam Babaee, Namrata Saha, Shabnam Rezapour and M. Hadi Amini at FIU.\n\nAgainst two standard ways of ranking repairs, a road-centrality ranking and a traffic-flow heuristic, TARM got traffic moving up to 68.4 % faster after the disaster. The finding that surprised us: more crews and a shorter repair period don't automatically mean better traffic during the response phase, and can even make it worse.",
     featuredOutcome: {
       url: "https://www.sciencedirect.com/science/article/abs/pii/S0951832026001870",
       label: "Reliability Engineering & System Safety",
       image: "/images/projects/ress-journal-cover.jpg",
     },
-    // TIP: save this image into /public/images/projects/ and point to it locally
-    heroImage:
-      "https://portfolio-assets.extern.com/portfolios/frank-ponce/assets/project_image_9102a97b-cf9c-4734-9ca7-b91981b02e80.jpg",
+    figure: {
+      src: "/images/projects/tarm-flow.svg",
+      title: "How TARM works",
+      alt: "Flowchart: a damaged road network feeds a reinforcement learning agent that picks which roads to restore; a day-to-day traffic simulation returns traffic acceleration as the reward; the result is a restoration policy up to 68.4% better than benchmark heuristics.",
+      caption:
+        "The agent only decides what to repair. Whether that helps is measured in a separate learning environment that simulates how traffic settles day by day, which is what lets the model capture travelers adapting.",
+    },
+    breakdown: [
+      {
+        title: "Why it's hard",
+        summary: "Few crews, uncertain repair times and travelers who adapt day by day.",
+        details:
+          "Three things make restoration planning messy: crews are scarce, damage data is incomplete so repair times are uncertain, and every reopened road shifts traffic as people slowly change routes. That calls for a method that is stochastic, sequential (decisions are staged as crews free up) and model-free, which rules out a single classic optimisation model.",
+      },
+      {
+        title: "The method",
+        summary: "An RL agent on a Markov decision process, with traffic simulated in its environment.",
+        details:
+          "At each stage the agent picks a subset of the still-damaged roads for the available crews; the next stage begins once they're restored. Its learning environment runs an optimization-based day-to-day traffic simulation and returns how much the decision sped up post-disaster traffic, which is the reward the agent learns to maximise.",
+      },
+      {
+        title: "The test",
+        summary: "Sioux Falls road network, tornado scenarios from historical data, two benchmarks.",
+        details:
+          "We compared TARM with a flow-unaware ranking by betweenness centrality and a flow-aware heuristic that prioritises roads by traffic flow, across different disruptions and crew levels, and varied how quickly news of each repair reaches travelers.",
+      },
+      {
+        title: "What we found",
+        summary: "Up to 68.4 % more traffic acceleration, and faster repairs aren't always better.",
+        details:
+          "TARM beat both benchmarks in every test instance, by up to 68.4 %. Travelers' route choices and how fast repair information spreads both change the optimal policy. Adding crews to finish sooner didn't necessarily help traffic during the response period, so the length of the restoration period, a common efficiency measure in earlier studies, turns out to be a poor one.",
+      },
+    ],
+    heroImage: "/images/projects/road-restoration.jpg",
   },
 ];

@@ -137,8 +137,9 @@ export function About() {
         <SectionIntro title="About me" text={profile.intro} />
 
         <div className="flex w-full flex-col gap-10 lg:flex-row lg:items-start">
-          <div className="flex w-full max-w-[427px] shrink-0 flex-col gap-6">
-          <aside className="relative flex w-full flex-col gap-6 overflow-hidden rounded-pf-lg bg-pf-surface">
+          {/* On mobile the left column dissolves (contents) so Experience can sit between the photo card and Skills. */}
+          <div className="contents lg:flex lg:w-full lg:max-w-[427px] lg:shrink-0 lg:flex-col lg:gap-6">
+          <aside className="relative order-1 flex w-full max-w-[427px] flex-col lg:order-none lg:max-w-none gap-6 overflow-hidden rounded-pf-lg bg-pf-surface">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
               <img alt="" className="absolute inset-0 size-full object-cover" src={profile.profilePicture} />
               <div className="absolute inset-0 bg-[image:var(--pf-hero-gradient)]" />
@@ -162,11 +163,13 @@ export function About() {
               </a>
             </div>
           </aside>
-          <Skills />
-          <TechStack />
+          <div className="order-3 flex w-full max-w-[427px] flex-col gap-6 lg:order-none lg:max-w-none">
+            <Skills />
+            <TechStack />
+          </div>
           </div>
 
-          <div className="flex min-w-0 flex-1 flex-col gap-6">
+          <div className="order-2 flex min-w-0 flex-1 flex-col gap-6 lg:order-none">
             <p className="w-full font-medium font-pf-display text-lg text-pf-text-subtle leading-6 tracking-[-0.5px] md:text-[22px] md:leading-7 md:tracking-[-1px]">
               {profile.bio}
             </p>

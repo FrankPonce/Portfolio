@@ -21,14 +21,15 @@ function WorkCard({ project: p }: { project: Project }) {
         <span className="sr-only">{p.title}</span>
       </Link>
 
-      {p.heroImage && (
+      {(p.cardImage ?? p.heroImage) && (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <img
             alt=""
             className="absolute inset-0 size-full object-cover opacity-25 transition-transform duration-300 group-hover:scale-[1.02] md:opacity-60"
-            src={p.heroImage}
+            src={p.cardImage ?? p.heroImage}
           />
-          <div className="absolute inset-0 bg-[image:var(--pf-noir-card-scrim)]" />
+          {/* Banner art sits on the right, where the photo scrim is darkest, so it gets an even veil instead. */}
+          <div className={`absolute inset-0 ${p.cardImage ? "bg-black/60" : "bg-[image:var(--pf-noir-card-scrim)]"}`} />
         </div>
       )}
 

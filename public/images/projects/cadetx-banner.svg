@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+  <title id="t">Competitor Demand Prediction</title>
+  <desc id="d">Hiring intelligence from job postings for Anthropic, OpenAI, NVIDIA and Google.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#21262d" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d1117" stop-opacity="1"/>
+      <stop offset="0.55" stop-color="#0d1117" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0d1117" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#grid)" opacity="0.7"/>
+
+  <!-- stylised trend lines, one per company colour -->
+  <g fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M640 230 C700 215, 740 225, 790 200 S880 150, 930 160 S1030 120, 1150 80" stroke="#b95115"/>
+    <path d="M640 200 C700 195, 750 185, 800 180 S890 170, 940 150 S1040 140, 1150 120" stroke="#9c7bd2"/>
+    <path d="M640 250 C710 240, 760 235, 820 220 S900 205, 960 200 S1060 185, 1150 170" stroke="#5ea529"/>
+    <path d="M640 265 C700 262, 770 255, 830 250 S910 240, 970 236 S1070 222, 1150 215" stroke="#2d6ac1"/>
+  </g>
+  <g>
+    <circle cx="1150" cy="80" r="6" fill="#b95115" stroke="#0d1117" stroke-width="3"/>
+    <circle cx="1150" cy="120" r="6" fill="#9c7bd2" stroke="#0d1117" stroke-width="3"/>
+    <circle cx="1150" cy="170" r="6" fill="#5ea529" stroke="#0d1117" stroke-width="3"/>
+    <circle cx="1150" cy="215" r="6" fill="#2d6ac1" stroke="#0d1117" stroke-width="3"/>
+  </g>
+  <rect width="760" height="300" fill="url(#fade)"/>
+
+  <g font-family="'Segoe UI', Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <text x="56" y="78" fill="#9198a1" font-size="15" font-weight="600" letter-spacing="3">NLP · FORECASTING · COMPETITIVE INTELLIGENCE</text>
+    <text x="56" y="132" fill="#e6edf3" font-size="44" font-weight="700">Competitor Demand Prediction</text>
+    <text x="56" y="172" fill="#9198a1" font-size="20">What job postings reveal about where AI companies are heading</text>
+
+    <g font-size="15" font-weight="600" fill="#e6edf3">
+      <rect x="56" y="206" width="126" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+      <circle cx="76" cy="223" r="6" fill="#b95115"/><text x="90" y="228">Anthropic</text>
+      <rect x="194" y="206" width="108" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+      <circle cx="214" cy="223" r="6" fill="#9c7bd2"/><text x="228" y="228">OpenAI</text>
+      <rect x="314" y="206" width="106" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+      <circle cx="334" cy="223" r="6" fill="#5ea529"/><text x="348" y="228">NVIDIA</text>
+      <rect x="432" y="206" width="106" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+      <circle cx="452" cy="223" r="6" fill="#2d6ac1"/><text x="466" y="228">Google</text>
+    </g>
+  </g>
+</svg>

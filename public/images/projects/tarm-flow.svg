@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">How TARM works</title>
+  <desc id="d">A reinforcement learning agent picks which damaged roads to restore next. A day-to-day traffic simulation shows how travelers re-route, and the resulting traffic acceleration is the agent's reward.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </pattern>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e8475a"/>
+    </marker>
+    <marker id="arwW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#bdbdbd"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="560" rx="16" fill="#050505"/>
+  <rect width="1200" height="560" rx="16" fill="url(#grid)"/>
+
+  <g font-family="'Segoe UI', Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <!-- 1. Disaster -->
+    <g transform="translate(40 150)">
+      <rect width="250" height="210" rx="12" fill="#0d0d0d" stroke="#3a3a3a"/>
+      <text x="22" y="38" fill="#8c8c8c" font-size="13" font-weight="700" letter-spacing="2.5">INPUT</text>
+      <text x="22" y="72" fill="#f2f2f2" font-size="22" font-weight="700">Damaged network</text>
+      <text x="22" y="104" fill="#a6a6a6" font-size="15">Sioux Falls roads after a</text>
+      <text x="22" y="126" fill="#a6a6a6" font-size="15">tornado (historical data)</text>
+      <!-- tiny network -->
+      <g transform="translate(22 146)" stroke-width="2.5" stroke-linecap="round">
+        <path d="M0 30 L60 8 L130 26 L200 6" stroke="#5c5c5c" fill="none"/>
+        <path d="M60 8 L80 46" stroke="#5c5c5c"/>
+        <path d="M130 26 L150 50" stroke="#910011" stroke-dasharray="5 5"/>
+        <path d="M80 46 L150 50" stroke="#910011" stroke-dasharray="5 5"/>
+        <g fill="#f2f2f2" stroke="none"><circle cx="0" cy="30" r="5"/><circle cx="60" cy="8" r="5"/><circle cx="130" cy="26" r="5"/><circle cx="200" cy="6" r="5"/><circle cx="80" cy="46" r="5"/><circle cx="150" cy="50" r="5"/></g>
+      </g>
+    </g>
+
+    <!-- 2. Agent -->
+    <g transform="translate(400 40)">
+      <rect width="400" height="200" rx="12" fill="#140003" stroke="#910011" stroke-width="2"/>
+      <text x="26" y="40" fill="#e8475a" font-size="13" font-weight="700" letter-spacing="2.5">RL AGENT · MDP</text>
+      <text x="26" y="76" fill="#f2f2f2" font-size="24" font-weight="700">Which roads next?</text>
+      <text x="26" y="110" fill="#b3b3b3" font-size="15">Each stage: pick a few unrepaired roads</text>
+      <text x="26" y="132" fill="#b3b3b3" font-size="15">for the limited crews. The next stage starts</text>
+      <text x="26" y="154" fill="#b3b3b3" font-size="15">once they're open, after an uncertain</text>
+      <text x="26" y="176" fill="#b3b3b3" font-size="15">repair time.</text>
+    </g>
+
+    <!-- 3. Environment -->
+    <g transform="translate(400 320)">
+      <rect width="400" height="200" rx="12" fill="#0d0d0d" stroke="#3a3a3a"/>
+      <text x="26" y="40" fill="#8c8c8c" font-size="13" font-weight="700" letter-spacing="2.5">LEARNING ENVIRONMENT</text>
+      <text x="26" y="76" fill="#f2f2f2" font-size="24" font-weight="700">Day-to-day traffic</text>
+      <text x="26" y="110" fill="#b3b3b3" font-size="15">An optimization-based simulation: travelers</text>
+      <text x="26" y="132" fill="#b3b3b3" font-size="15">re-route gradually as roads reopen, and as</text>
+      <text x="26" y="154" fill="#b3b3b3" font-size="15">news of each repair spreads.</text>
+    </g>
+
+    <!-- 4. Output -->
+    <g transform="translate(910 150)">
+      <rect width="250" height="210" rx="12" fill="#0d0d0d" stroke="#3a3a3a"/>
+      <text x="22" y="38" fill="#8c8c8c" font-size="13" font-weight="700" letter-spacing="2.5">OUTPUT</text>
+      <text x="22" y="72" fill="#f2f2f2" font-size="22" font-weight="700">Restoration policy</text>
+      <text x="22" y="104" fill="#a6a6a6" font-size="15">A repair order that gets</text>
+      <text x="22" y="126" fill="#a6a6a6" font-size="15">traffic moving fastest</text>
+      <text x="22" y="176" fill="#e8475a" font-size="30" font-weight="700">up to +68.4%</text>
+      <text x="22" y="198" fill="#8c8c8c" font-size="13">vs. benchmark heuristics</text>
+    </g>
+
+    <!-- arrows -->
+    <path d="M290 230 C340 230, 350 140, 392 140" fill="none" stroke="#bdbdbd" stroke-width="2.5" marker-end="url(#arwW)"/>
+    <text x="352" y="212" fill="#8c8c8c" font-size="13">state</text>
+
+    <path d="M560 240 V312" fill="none" stroke="#e8475a" stroke-width="2.5" marker-end="url(#arw)"/>
+    <text x="546" y="282" fill="#e8475a" font-size="14" font-weight="600" text-anchor="end">restore roads</text>
+
+    <path d="M660 320 V248" fill="none" stroke="#e8475a" stroke-width="2.5" marker-end="url(#arw)"/>
+    <text x="674" y="282" fill="#e8475a" font-size="14" font-weight="600">reward: traffic acceleration</text>
+
+    <path d="M800 140 C850 140, 860 230, 902 230" fill="none" stroke="#bdbdbd" stroke-width="2.5" marker-end="url(#arwW)"/>
+    <text x="808" y="212" fill="#8c8c8c" font-size="13">trained policy</text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+  <title id="t">VistaTrade</title>
+  <desc id="d">Paper trading, a beginner course and an honest forecasting experiment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#000000"/>
+      <stop offset="1" stop-color="#120b1a"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1d1428" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7A072"/>
+      <stop offset="0.55" stop-color="#F0609E"/>
+      <stop offset="1" stop-color="#9B6BFF"/>
+    </linearGradient>
+    <clipPath id="cut">
+      <rect x="820" y="40" width="260" height="104"/>
+      <rect x="820" y="150" width="260" height="12"/>
+      <rect x="820" y="168" width="260" height="8"/>
+      <rect x="820" y="182" width="260" height="5"/>
+    </clipPath>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3CCFC6" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#3CCFC6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#grid)" opacity="0.8"/>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="16" fill="none" stroke="#9B6BFF" stroke-opacity="0.35"/>
+
+  <!-- striped Miami sunset -->
+  <circle cx="950" cy="140" r="96" fill="url(#sun)" clip-path="url(#cut)" opacity="0.9"/>
+  <path d="M640 196 H1170" stroke="#3CCFC6" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- price line over the horizon -->
+  <path d="M640 250 L700 238 L740 244 L790 220 L830 228 L880 204 L920 212 L970 188 L1010 196 L1060 170 L1100 178 L1150 150 L1150 290 L640 290 Z" fill="url(#area)"/>
+  <path d="M640 250 L700 238 L740 244 L790 220 L830 228 L880 204 L920 212 L970 188 L1010 196 L1060 170 L1100 178 L1150 150" fill="none" stroke="#3CCFC6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1150" cy="150" r="6" fill="#3CCFC6" stroke="#000" stroke-width="3"/>
+
+  <rect width="760" height="300" fill="url(#fade)"/>
+
+  <g font-family="'Segoe UI', Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+    <text x="56" y="78" fill="#9D94AA" font-size="15" font-weight="600" letter-spacing="3">PAPER TRADING · LEARNING · FORECASTING</text>
+    <text x="56" y="132" fill="#F2EDF7" font-size="46" font-weight="700" letter-spacing="6">VISTA<tspan fill="#F0609E" font-style="italic" font-weight="600" letter-spacing="1">trade</tspan></text>
+    <text x="56" y="172" fill="#9D94AA" font-size="20">Trade with fake money, learn from zero, and see how little a model can predict</text>
+
+    <g font-size="15" font-weight="600" fill="#F2EDF7">
+      <rect x="56" y="206" width="150" height="34" rx="17" fill="#140c1e" stroke="#3a2a52"/>
+      <circle cx="76" cy="223" r="6" fill="#3CCFC6"/><text x="90" y="228">Paper trading</text>
+      <rect x="218" y="206" width="118" height="34" rx="17" fill="#140c1e" stroke="#3a2a52"/>
+      <circle cx="238" cy="223" r="6" fill="#F0609E"/><text x="252" y="228">8 lessons</text>
+      <rect x="348" y="206" width="130" height="34" rx="17" fill="#140c1e" stroke="#3a2a52"/>
+      <circle cx="368" cy="223" r="6" fill="#9B6BFF"/><text x="382" y="228">Forecasts</text>
+    </g>
+  </g>
+</svg>
