@@ -117,8 +117,8 @@ export const profile = {
 
   contact: {
     email: "Frank.MediavillaPonce@abo.fi",
-    phone: "+3584044228",
-    phoneDisplay: "+358 40 44228",
+    phone: "+358408544228",
+    phoneDisplay: "+358 40 8544228",
     linkedin: "https://linkedin.com/in/frank-mediavilla",
     github: "https://github.com/FrankPonce",
     location: "Turku, Finland",
